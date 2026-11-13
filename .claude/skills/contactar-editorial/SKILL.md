@@ -25,7 +25,7 @@ Modo alternativo: si el usuario dice "marcar enviado <editorial>", ir directo a 
   - Si la carpeta no está conectada, pedir acceso a `LCFP` con device_request_folder_access.
 - Notion, base "Seguimiento Editoriales": `collection://3918da52-9e8e-8041-bcff-000bbd4d2381`. Columnas: Editorial (título), Prioridad, Estado (No enviado / Enviado), Cuento seleccionado, Motivo de la elección / línea editorial, Vía de envío, Email / formulario (tipo email), Fecha de envío, Fecha límite de seguimiento (+3 meses), Fecha de respuesta, Respuesta / notas, Próxima acción, Enlace catálogo.
 - Gmail: correo modelo enviado a La Caja (hilo `19fdd40206e08e3b`, asunto "Manuscrito - Las cosas que flotan").
-- Proyecto de Claude "Las cosas que flotan": `claude/estado-del-proyecto.md` y `claude/sinopsis-editorial.md`. Leerlos al empezar.
+- Archivos locales del libro: `las-cosas-que-flotan/estado-del-proyecto.md` y `las-cosas-que-flotan/sinopsis-editorial.md`. Leerlos al empezar.
 
 ## Paso 0 · Chequeo previo
 1. Buscar la editorial en Notion (query a la base) y en Gmail (`in:sent` con su dominio o nombre). Si ya hubo envío, decirlo con fecha y relato.
@@ -115,10 +115,10 @@ Buscar la fila de la editorial; si no existe, crearla (preguntar la Prioridad). 
 ⏸ Mostrar qué se va a escribir antes de escribirlo.
 
 ## Paso 7 · Cierre
-Actualizar `claude/estado-del-proyecto.md` en el proyecto (project_read, editar, project_write): editorial preparada, relato, adjuntos, ubicación (`Dossiers/<Editorial>/`), estado y plazo de seguimiento. Terminar con un resumen de 2 o 3 líneas: enlace al borrador, carpeta de la editorial, fila de Notion.
+Actualizar el archivo local `las-cosas-que-flotan/estado-del-proyecto.md` (leerlo y editarlo): editorial preparada, relato, adjuntos, ubicación (`Dossiers/<Editorial>/`), estado y plazo de seguimiento. Terminar con un resumen de 2 o 3 líneas: enlace al borrador, carpeta de la editorial, fila de Notion.
 
 ## Marcar enviado
 1. Verificar en Gmail (`in:sent` al email de la editorial) que el correo salió y tomar la fecha real. Comprobar que lleva los adjuntos.
 2. En Notion: Estado = Enviado, Fecha de envío = esa fecha, Fecha límite de seguimiento = +3 meses o el plazo de la editorial si figura en notas (ej. Minúscula: 4 meses), Próxima acción = "Esperar respuesta hasta <fecha>".
-3. Actualizar `claude/estado-del-proyecto.md`.
+3. Actualizar el archivo local `las-cosas-que-flotan/estado-del-proyecto.md`.
 ⏸ Confirmar antes de escribir.

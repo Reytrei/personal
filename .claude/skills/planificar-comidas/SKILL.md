@@ -9,7 +9,7 @@ Se corre cada dos semanas, el lunes. Arma el calendario de comidas del ciclo de 
 
 ## Referencias
 
-- Contexto completo (reglas, hábitos, historial de ciclos): doc del proyecto `claude/nutricion-contexto.md`. Leerlo siempre primero; sus reglas mandan sobre esta skill si hay diferencias.
+- Contexto completo (reglas, hábitos, historial de ciclos): archivo local `nutricion/contexto.md`. Leerlo siempre primero; sus reglas mandan sobre esta skill si hay diferencias.
 - Planilla "Plan y registro de comidas Juanma", id `1mfIChB1alVFoRp2GkjKzOCv-Q1tEYxMVxdDSMwUVGgM` (locale es_UY: fórmulas en español con punto y coma):
   - Metas (porciones por comida), Equivalencias (porciones en crudo), Crudo y cocido.
   - Banco de comidas (A:K): Comida, Momento, Qué lleva, Porciones, Se cocina el doble, Notas, Última vez planificada, Proteína, Método, Base de carbohidrato, Estado.

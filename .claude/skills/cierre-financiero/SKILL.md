@@ -11,7 +11,7 @@ Solo lees la hoja: no escribes ni cambias nada en ella (tampoco la celda `Presup
 
 ## Contexto
 
-- Lee primero el doc del proyecto `claude/finanzas-contexto.md` (con la herramienta Projects, si está disponible): explica la hoja, los tipos de movimiento, "De quién", el presupuesto y las deudas.
+- Lee primero el archivo local `finanzas/contexto.md`: explica la hoja, los tipos de movimiento, "De quién", el presupuesto y las deudas.
 - Hoja "Finanzas 2026", id `1FiCS-xYOUwxZn2sHkUtaiPEbfQHwi6h9sKdV_lDrC5k`. Moneda base USD.
 - Mes a analizar: el mes anterior al de hoy, salvo que Juanma pida otro.
 
