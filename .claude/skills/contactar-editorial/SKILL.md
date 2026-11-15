@@ -11,7 +11,7 @@ Modo alternativo: si el usuario dice "marcar enviado <editorial>", ir directo a 
 
 ## Reglas generales
 - **Frenar al final de cada paso** con AskUserQuestion. No avanzar sin respuesta. Nunca asumir: ante la duda, preguntar.
-- Todo lo que el usuario tenga que leer (fichas, opciones, correo) va con SendUserMessage o en la respuesta final, nunca solo como texto entre llamadas: ese texto no le llega.
+- Todo lo que el usuario tenga que leer (fichas, opciones, correo) va completo en la respuesta.
 - Al pedirle que elija entre opciones, dar información suficiente para decidir (qué es cada una, la conexión, pros y contras), no solo nombres.
 - Respuestas breves. No usar nunca `---` como separador en textos.
 - Sin guiones largos en los textos generados. No mencionar el Premio Onetti.
@@ -23,9 +23,9 @@ Modo alternativo: si el usuario dice "marcar enviado <editorial>", ir directo a 
   - Plantilla: `LCFP/Proyecto Editoriales/Plantilla dosier/` (ver `LEEME.md`). Guarda **solo lo genérico**: `base.json`, `relatos/` (banco de relatos, se reutilizan), `plantilla.html.j2`, `generar.py`, `assets/`, `fonts/`.
   - Carpeta por editorial: `LCFP/Proyecto Editoriales/Dossiers/<Editorial>/`. Es el registro de lo enviado: el JSON de la editorial, el dosier PDF y el manuscrito (si se envía). Nada de una editorial se guarda en la plantilla.
   - Acceso directo desde la Mac (está en `additionalDirectories` de la configuración del proyecto, `settings.json`). Si un archivo no abre, puede estar solo en la nube de OneDrive: avisar a Juanma para que lo descargue.
-- Notion, base "Seguimiento Editoriales": `collection://3918da52-9e8e-8041-bcff-000bbd4d2381`. Columnas: Editorial (título), Prioridad, Estado (No enviado / Enviado), Cuento seleccionado, Motivo de la elección / línea editorial, Vía de envío, Email / formulario (tipo email), Fecha de envío, Fecha límite de seguimiento (+3 meses), Fecha de respuesta, Respuesta / notas, Próxima acción, Enlace catálogo.
+- Notion, base "Seguimiento Editoriales": `collection://3918da52-9e8e-8041-bcff-000bbd4d2381`. Es el único lugar del seguimiento de envíos (editorial, relato, estado, fechas, próxima acción). Columnas: Editorial (título), Prioridad, Estado (No enviado / Enviado), Cuento seleccionado, Motivo de la elección / línea editorial, Vía de envío, Email / formulario (tipo email), Fecha de envío, Fecha límite de seguimiento (+3 meses), Fecha de respuesta, Respuesta / notas, Próxima acción, Enlace catálogo.
 - Gmail: correo modelo enviado a La Caja (hilo `19fdd40206e08e3b`, asunto "Manuscrito - Las cosas que flotan").
-- Archivos locales del libro: `las-cosas-que-flotan/estado-del-proyecto.md` y `las-cosas-que-flotan/sinopsis-editorial.md`. Leerlos al empezar.
+- Archivos locales del libro: `las-cosas-que-flotan/contexto.md` y `las-cosas-que-flotan/sinopsis-editorial.md`. Leerlos al empezar. `contexto.md` se actualiza solo si cambia una decisión o una regla (del dosier, del manuscrito o del correo), y antes se le pregunta a Juanma.
 
 ## Paso 0 · Chequeo previo
 1. Buscar la editorial en Notion (query a la base) y en Gmail (`in:sent` con su dominio o nombre). Si ya hubo envío, decirlo con fecha y relato.
@@ -52,7 +52,7 @@ Antes de justificar con la descripción del índice, comprobar en el manuscrito 
 
 ## Paso 4 · Dosier
 1. Si no existe `relatos/<slug-relato>.json` en la plantilla (slug en minúsculas con guiones, ej. `esa-luz-que-encandila`):
-   - Stagear el manuscrito .docx a la nube y extraer el relato con python-docx. Ubicarlo por su título (los títulos son párrafos sueltos; no hay saltos de página).
+   - Extraer el relato del manuscrito .docx con python-docx. Ubicarlo por su título (los títulos son párrafos sueltos; no hay saltos de página).
    - Generar la lista de elementos:
      - párrafo: `{"t": texto, "brk": true si antes hay corte de escena}`. Los cortes suelen ser párrafos vacíos o separadores (`*`, `***`, `#`); no incluirlos como párrafos.
      - sección numerada: `{"sec": "1"}` cuando el relato tiene secciones con número (ej. Abrigo: 1 a 5, 121 a 123).
@@ -60,17 +60,16 @@ Antes de justificar con la descripción del índice, comprobar en el manuscrito 
    - Si el relato tiene secciones, versos u otra estructura, preguntar cómo mostrarla antes de generar.
    - Mostrar el primer y el último párrafo, y la cantidad de párrafos, cortes, secciones y estrofas, para validar.
 2. Crear la carpeta `Dossiers/<Editorial>/` y dentro `<slug-editorial>.json` con `editorial`, `relato` y `relato_titulo` (idéntico a como figura en el índice de `base.json`).
-3. Generar el PDF. La computadora no tiene Playwright, así que se genera en la nube:
-   - Stagear `base.json`, `generar.py`, `plantilla.html.j2`, `assets/portada.jpg`, `fonts/*`, el JSON del relato y el JSON de la editorial.
-   - Replicar la estructura (`Proyecto Editoriales/Plantilla dosier/` y `Proyecto Editoriales/Dossiers/<Editorial>/`), `pip install jinja2` si falta y, desde la plantilla, correr `python3 generar.py "../Dossiers/<Editorial>/<slug-editorial>.json"`. El PDF queda junto al JSON.
+3. Generar el PDF directamente en LCFP:
+   - Desde `LCFP/Proyecto Editoriales/Plantilla dosier/`, correr `python3 generar.py "../Dossiers/<Editorial>/<slug-editorial>.json"`. El PDF queda en `Dossiers/<Editorial>/`, junto al JSON.
    - Revisar el PDF visualmente (páginas del índice y del relato).
-   - Copiar a la computadora con device_commit_files: el PDF y el JSON de la editorial a `Dossiers/<Editorial>/`; un relato nuevo a `Plantilla dosier/relatos/`. Cambios en `base.json`, `plantilla.html.j2` o `generar.py` solo si el usuario los aprobó.
-4. ⏸ Enviar el PDF con SendUserFile y esperar el visto bueno.
+   - Un relato nuevo se guarda en `Plantilla dosier/relatos/`. Cambios en `base.json`, `plantilla.html.j2` o `generar.py` solo si el usuario los aprobó.
+4. ⏸ Abrir el PDF con `open` y pasar su ruta; esperar el visto bueno.
 
 ## Paso 4b · Manuscrito (solo si se envía)
 - Partir de una copia del .docx original. Formato: .docx si las bases lo piden, si no PDF.
 - Ajustar a las bases (doble espacio si lo piden, páginas numeradas), cada relato en página nueva (sacar los párrafos vacíos que hacen de separación) y carátula como la del dosier: foto de portada, "Libro de relatos · Manuscrito", título, nombre y email. La carátula reemplaza la primera página del original.
-- Convertir con LibreOffice, revisar visualmente (carátula, inicio de cada relato) y enviar con SendUserFile.
+- Convertir con LibreOffice, revisar visualmente (carátula, inicio de cada relato), abrirlo con `open` y pasar su ruta.
 - ⏸ Con el OK, guardar en `Dossiers/<Editorial>/Las cosas que flotan - Juan Manuel Trelles.<ext>`.
 
 ## Paso 5 · Correo
@@ -98,7 +97,7 @@ juanm.trelles@gmail.com
 ```
 
 Firma: solo email (sin teléfono). Si va el manuscrito completo, el cierre pasa a: "Adjunto el manuscrito completo{, a doble espacio y con las páginas numeradas} y un dosier con un relato de muestra, «{relato}». Quedo a su disposición para cualquier consulta." Si las bases piden otra cosa (sinopsis, fragmento), adaptar el cierre y avisar.
-⏸ Mostrar el correo completo con SendUserMessage (o en la respuesta final). Con el OK, crear el borrador con mcp__Gmail__create_draft (htmlBody con cursivas en títulos + body en texto plano), dirigido al email de envíos. Si el envío es por formulario, no crear borrador: dejar el texto listo para pegar y el enlace al formulario.
+⏸ Mostrar el correo completo en la respuesta. Con el OK, crear el borrador con create_draft de Gmail (htmlBody con cursivas en títulos + body en texto plano), dirigido al email de envíos. Si el envío es por formulario, no crear borrador: dejar el texto listo para pegar y el enlace al formulario.
 Adjuntos: el conector no admite adjuntar archivos grandes de forma práctica, así que indicar al usuario que adjunte a mano los archivos de `Dossiers/<Editorial>/` (dosier y, si va, manuscrito), y darle el enlace al borrador.
 
 ## Paso 6 · Notion
@@ -115,10 +114,9 @@ Buscar la fila de la editorial; si no existe, crearla (preguntar la Prioridad). 
 ⏸ Mostrar qué se va a escribir antes de escribirlo.
 
 ## Paso 7 · Cierre
-Actualizar el archivo local `las-cosas-que-flotan/estado-del-proyecto.md` (leerlo y editarlo): editorial preparada, relato, adjuntos, ubicación (`Dossiers/<Editorial>/`), estado y plazo de seguimiento. Terminar con un resumen de 2 o 3 líneas: enlace al borrador, carpeta de la editorial, fila de Notion.
+Terminar con un resumen de 2 o 3 líneas: enlace al borrador, carpeta de la editorial, fila de Notion.
 
 ## Marcar enviado
 1. Verificar en Gmail (`in:sent` al email de la editorial) que el correo salió y tomar la fecha real. Comprobar que lleva los adjuntos.
 2. En Notion: Estado = Enviado, Fecha de envío = esa fecha, Fecha límite de seguimiento = +3 meses o el plazo de la editorial si figura en notas (ej. Minúscula: 4 meses), Próxima acción = "Esperar respuesta hasta <fecha>".
-3. Actualizar el archivo local `las-cosas-que-flotan/estado-del-proyecto.md`.
 ⏸ Confirmar antes de escribir.
