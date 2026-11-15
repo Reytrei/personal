@@ -22,7 +22,7 @@ Modo alternativo: si el usuario dice "marcar enviado <editorial>", ir directo a 
   - Manuscrito original: `LCFP/Borradores/Las cosas que flotan.docx` (no se modifica nunca).
   - Plantilla: `LCFP/Proyecto Editoriales/Plantilla dosier/` (ver `LEEME.md`). Guarda **solo lo genérico**: `base.json`, `relatos/` (banco de relatos, se reutilizan), `plantilla.html.j2`, `generar.py`, `assets/`, `fonts/`.
   - Carpeta por editorial: `LCFP/Proyecto Editoriales/Dossiers/<Editorial>/`. Es el registro de lo enviado: el JSON de la editorial, el dosier PDF y el manuscrito (si se envía). Nada de una editorial se guarda en la plantilla.
-  - Acceso directo desde la Mac (está en `additionalDirectories` de `.claude/settings.json`). Si un archivo no abre, puede estar solo en la nube de OneDrive: avisar a Juanma para que lo descargue.
+  - Acceso directo desde la Mac (está en `additionalDirectories` de la configuración del proyecto, `settings.json`). Si un archivo no abre, puede estar solo en la nube de OneDrive: avisar a Juanma para que lo descargue.
 - Notion, base "Seguimiento Editoriales": `collection://3918da52-9e8e-8041-bcff-000bbd4d2381`. Columnas: Editorial (título), Prioridad, Estado (No enviado / Enviado), Cuento seleccionado, Motivo de la elección / línea editorial, Vía de envío, Email / formulario (tipo email), Fecha de envío, Fecha límite de seguimiento (+3 meses), Fecha de respuesta, Respuesta / notas, Próxima acción, Enlace catálogo.
 - Gmail: correo modelo enviado a La Caja (hilo `19fdd40206e08e3b`, asunto "Manuscrito - Las cosas que flotan").
 - Archivos locales del libro: `las-cosas-que-flotan/estado-del-proyecto.md` y `las-cosas-que-flotan/sinopsis-editorial.md`. Leerlos al empezar.
