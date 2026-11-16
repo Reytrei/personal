@@ -15,6 +15,7 @@ Objetivo: que Juan Manuel llegue a su Weekly Review recordando qué hizo, con la
 - Weekly Goals: collection://3a78da52-9e8e-80ec-9194-000b92d60eca (relación con Weeks; Done; Señal).
 - Task DB: collection://020b9241-244e-42d2-9ce7-db5671397421 (Task, Done, Do Date, Due Date, Status, Projects, Urgencia, Tiempo). Urgencia: Esta semana, Normal, Sin apuro; vacío = Normal.
 - Projects: collection://9c4c5809-fcf0-4783-9e5a-71e03f4eb42b (activos: Status In Progress, Planning, Not started).
+- Seguimiento Editoriales: collection://3918da52-9e8e-8041-bcff-000bbd4d2381 (Editorial, Estado, Fecha de envío, Próxima acción). Es la fuente de los envíos a editoriales, no Task DB.
 - Quarters: páginas "AA - QN" (ej. "26 - Q4"); las metas del trimestre y sus indicadores semanales están en la página. Buscarla con la búsqueda de Notion.
 - Google Calendar: principal (juanm.trelles@gmail.com), "Rutina" (bloques de Trabajo; el horario cambia según el mes, leerlo del calendario y no asumirlo; ignorar en el resumen de eventos) y "Morcillas" (compartido).
 
@@ -34,6 +35,7 @@ Antes de crear algo, comprobar que no exista ya: en Task DB, una tarea con el mi
 - Los eventos se crean en el calendario principal. La tarea de Task DB lleva solo la fecha (sin hora).
 - Si no hay hueco para un GYM, crear la tarea igual, sin evento, y avisarlo en el briefing.
 - Si un día de GYM coincide con otro entrenamiento del calendario, crearlo igual y avisarlo para que él decida.
+- Lesión activa: si hay un proyecto de recuperación de una lesión en curso (ej. "Recuperación del desgarro" con Status In Progress), NO crear los GYM. En la línea de recurrentes del briefing, preguntar qué entrenamientos van esa semana (manda el plan del fisio) y no restar GYM en la capacidad.
 
 ## Reglas de capacidad
 Capacidad = horas por día disponibles para tareas propias. El día tiene las mismas horas aunque empiece antes: entrenamientos y eventos restan del presupuesto del día sin importar a qué hora sean.
@@ -59,6 +61,7 @@ Capacidad = horas por día disponibles para tareas propias. El día tiene las mi
    - Lo que quedó sin hacer: Do Date dentro de la semana y Done = false. Destacar las que tenían Urgencia = Esta semana.
 4. **Alineación**:
    - Metas del Quarter vigente con su indicador semanal (si la página no existe o no tiene metas, decirlo).
+   - Envíos a editoriales: contar las filas de Seguimiento Editoriales con Fecha de envío dentro de la semana que termina (nombrarlas). Si una tarea "Enviar dossier a X" está Done pero X no tiene envío registrado en la semana (descartada, se envió otro día o falta cargar la fecha), avisarlo. Si hay filas con Estado = Enviado sin Fecha de envío, avisarlo también.
    - Qué parte de lo hecho empujó proyectos activos o metas, y qué parte fue mantenimiento o urgencias.
    - Proyectos activos sin ninguna tarea abierta (sin próxima acción).
 5. **Capacidad de la semana a planificar**: tabla por día con presupuesto, lo que se resta, horas libres, planificables (×0.7), carga ya agendada y margen. Cerrar con el total planificable y avisar los días sobrecargados.
@@ -70,9 +73,16 @@ Capacidad = horas por día disponibles para tareas propias. El día tiene las mi
    - Lo que piden los indicadores del Q esa semana (ej. envíos a editoriales, posts de LinkedIn), indicando si ya hay tarea o falta crearla.
    - No incluir tareas con Urgencia = Sin apuro y sin Due Date.
    - Para cada candidata, Tiempo (o "sin estimar") y por qué está. Sumar el Tiempo del pool y compararlo con la capacidad planificable.
-7. **Pipelines**: Status = Waiting (con fecha de seguimiento). Cuántas tareas hay en "Por decidir" (sin Do Date, sin proyecto, sin Status) y cuáles llevan más de 30 días abiertas.
-8. **Comidas (plan contra lo comido)**: planilla "Plan y registro de comidas Juanma" (id `1mfIChB1alVFoRp2GkjKzOCv-Q1tEYxMVxdDSMwUVGgM`, locale es_UY). Revisar los últimos 7 días hasta ayer en las pestañas "Semana DD/MM" (pueden ser dos). Para cada día con algo en "Lo que comí", calcular las porciones con la pestaña Equivalencias (en crudo; 180 g de carne = 3 prote; legumbres 0,5 carbo + 0,5 prote) y escribirlas en la columna "Lo que comí" de ese día, filas 16 a 20 (carbo, prote, grasa, fruta, vegetales; meta en la columna P). En el briefing: días que cumplieron las 22 porciones, faltantes o excesos por grupo, platos planificados que no se cocinaron y platos con Estado "Probar" del Banco de comidas que se comieron, preguntando qué le parecieron. Si no cargó nada, decirlo en una línea.
-9. **Candidatos a Weekly Goal**: 2 o 3, cada uno con una línea de por qué, alineados a las metas del Quarter si existen; si no, a proyectos activos y fechas límite. Son sugerencias: él elige.
+7. **Clean execution propuesto**: lista de decisiones ya sugeridas para que él solo apruebe o corrija (no ejecutar nada). Una línea por tarea con la acción sugerida (marcar hecha, nueva Do Date, sacar fecha, unificar, Waiting, borrar):
+   - Duplicados probables (nombres o intención parecidos, ej. "cancelar claude?" y "Decidir plan de Claude").
+   - Tareas con Urgencia = Sin apuro y Do Date en la semana a planificar.
+   - Vencidas (Due Date pasada y Done = false).
+   - Arrastradas: Urgencia = Esta semana que no se hicieron la semana anterior (preguntar si siguen siendo urgentes).
+   - Tareas Next Up que ya parecen hechas (ej. una skill que ya existe en `.claude/skills/`).
+   - Las de "Por decidir" (sin Do Date, sin proyecto, sin Status), cada una con su destino sugerido.
+8. **Pipelines**: Status = Waiting (con fecha de seguimiento); marcar las que no tienen seguimiento o llevan más de 30 días.
+9. **Comidas (plan contra lo comido)**: planilla "Plan y registro de comidas Juanma" (id `1mfIChB1alVFoRp2GkjKzOCv-Q1tEYxMVxdDSMwUVGgM`, locale es_UY). Revisar los últimos 7 días hasta ayer en las pestañas "Semana DD/MM" (pueden ser dos). Para cada día con algo en "Lo que comí", calcular las porciones con la pestaña Equivalencias (en crudo; 180 g de carne = 3 prote; legumbres 0,5 carbo + 0,5 prote) y escribirlas en la columna "Lo que comí" de ese día, filas 16 a 20 (carbo, prote, grasa, fruta, vegetales; meta en la columna P). En el briefing: días que cumplieron las 22 porciones, faltantes o excesos por grupo, platos planificados que no se cocinaron y platos con Estado "Probar" del Banco de comidas que se comieron, preguntando qué le parecieron. Si no cargó nada, decirlo en una línea.
+10. **Candidatos a Weekly Goal**: 2 o 3, cada uno con una línea de por qué, alineados a las metas del Quarter si existen; si no, a proyectos activos y fechas límite. Son sugerencias: él elige.
 
 ## Salida
 - Insertar al INICIO de la página de la semana que termina un bloque desplegable (toggle) titulado "🤖 Briefing semanal" con todo el contenido dentro. Leer antes notion://docs/enhanced-markdown-spec para la sintaxis. Además de eso, de las tareas recurrentes con sus eventos y de las porciones de lo comido en la planilla de comidas, no modificar nada más.
