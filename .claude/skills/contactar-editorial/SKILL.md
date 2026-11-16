@@ -80,9 +80,7 @@ Asunto: el que pidan las bases; si no piden nada, "Manuscrito - Las cosas que fl
 ```
 Hola {saludo},
 
-Me llamo Juan Manuel Trelles y les escribo para presentar mi primer libro de relatos, Las cosas que flotan, un conjunto de 11 cuentos y unas 40.000 palabras.
-
-{Párrafo del libro: base.json libro[0], tal cual}
+Me llamo Juan Manuel Trelles y les escribo para presentar mi primer libro de relatos, Las cosas que flotan, {línea de presentación}.
 
 {Por qué esta editorial: 2 o 3 frases. Título ancla (en cursiva) y autor, y en qué dialogan. Opcional: una conexión secundaria (publican debutantes, relatos, autores rioplatenses...).}
 
@@ -95,6 +93,8 @@ Un saludo,
 Juan Manuel Trelles
 juanm.trelles@gmail.com
 ```
+
+Línea de presentación: es la única descripción del libro en el correo. Se arma para cada envío según lo que se manda (relato de muestra, título ancla, perfil de la editorial), a partir de la sinopsis. Proponer 2 o 3 versiones para que Juanma elija o corrija. No copiarla de correos anteriores ni pegar el párrafo de "El libro". No usar "hombres que no saben decir lo que sienten" ni paráfrasis de esa idea.
 
 Firma: solo email (sin teléfono). Si va el manuscrito completo, el cierre pasa a: "Adjunto el manuscrito completo{, a doble espacio y con las páginas numeradas} y un dosier con un relato de muestra, «{relato}». Quedo a su disposición para cualquier consulta." Si las bases piden otra cosa (sinopsis, fragmento), adaptar el cierre y avisar.
 ⏸ Mostrar el correo completo en la respuesta. Con el OK, crear el borrador con create_draft de Gmail (htmlBody con cursivas en títulos + body en texto plano), dirigido al email de envíos. Si el envío es por formulario, no crear borrador: dejar el texto listo para pegar y el enlace al formulario.

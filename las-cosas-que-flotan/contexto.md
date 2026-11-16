@@ -58,7 +58,7 @@ Decisiones:
 ## Correo (estructura del enviado a La Caja)
 Preferencias (5/11): sin dos puntos, sin abrir el porqué con "Pienso en"; el porqué no puede ser solo el título ancla, tiene que sumar algo de la línea de la editorial. En Galaxia Gutenberg se sacó la sinopsis del correo (queda una línea de qué es el libro); en Fulgencio Pimentel también.
 1. Presentación: nombre, primer libro, 11 cuentos, unas 40.000 palabras.
-2. Párrafo del libro (gancho del suicidio masculino en Uruguay).
+2. Línea de presentación del libro (desde Galaxia Gutenberg reemplaza al párrafo del libro). 16/11: se arma para cada envío según lo que se manda, con 2 o 3 versiones para elegir; no se copia de correos anteriores. No usar "hombres que no saben decir lo que sienten" ni paráfrasis: en la sinopsis funciona por la ironía del "(para variar)", pero en el correo es la única descripción del libro y suena a cliché.
 3. Por qué esa editorial: un título de su catálogo con el que dialoga el libro (en La Caja: *De ningún lugar a ninguna parte*, de Bekim Sejranović; en Minúscula: *Sabrina y Corina*, de Kali Fajardo-Anstine; en Barrett: *Una música futura*, de María José Navia; en Galaxia Gutenberg: *Alimento para puma*, de Matías Gotelli; en Fulgencio Pimentel: *La comemadre*, de Roque Larraquy). Es lo que se personaliza.
 4. Bio breve.
 5. Cierre: adjunta el dosier con el relato y ofrece el manuscrito completo (si va adjunto, solo se menciona).
