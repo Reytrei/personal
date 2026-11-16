@@ -27,7 +27,7 @@ Decisiones:
 - Adjunto: el dosier (ya trae el relato). Si las bases piden el manuscrito, también el manuscrito. Se adjuntan a mano en el borrador.
 - Notion: queda "No enviado" con próxima acción hasta confirmar el envío.
 - Correo base corregido: "uruguayo" en minúscula, bio con puntuación y mención a Selecta.
-- El PDF se genera en la nube (la computadora no tiene Playwright) y se copia a `Dossiers/<Editorial>/`.
+- 15/11: el PDF se genera en la Mac, corriendo `generar.py` desde `Plantilla dosier/` (jinja2 y Playwright instalados); queda en `Dossiers/<Editorial>/`.
 - Nada de una editorial se guarda en la plantilla.
 - El seguimiento se ajusta al plazo de respuesta de cada editorial (por defecto, 3 meses).
 - Si la editorial pide un formato propio (como Barrett, 2 páginas), se salta el dosier y el correo es corto: no repite lo que va en el adjunto, saluda a los editores por nombre, felicita y menciona algo concreto de la editorial.
