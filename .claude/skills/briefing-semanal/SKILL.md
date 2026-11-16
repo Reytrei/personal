@@ -27,15 +27,11 @@ Antes de crear algo, comprobar que no exista ya: en Task DB, una tarea con el mi
 | Weekly Review | lunes | 30 min | Evento "Weekly Review" de 30 min en el primer hueco libre del lunes entre 9:00 y 12:00 |
 | Importar finanzas | lunes | 15 min | No |
 | Revisar finanzas | lunes | 30 min | No |
-| GYM | martes | 1 h | Evento "GYM" de 1 h en el primer hueco libre entre 7:00 y 9:00; si no hay, entre 18:00 y 20:00 |
-| GYM | viernes | 1 h | Igual que el martes |
 
 - No crear "Plan de Comidas" ni "Super": la planificación de comidas, las compras y las tareas de verdulería las crea la skill planificar-comidas cada dos semanas.
 - Hueco libre = sin eventos en el calendario principal ni en "Morcillas" (los bloques de Trabajo no cuentan como ocupado para la Weekly Review).
 - Los eventos se crean en el calendario principal. La tarea de Task DB lleva solo la fecha (sin hora).
-- Si no hay hueco para un GYM, crear la tarea igual, sin evento, y avisarlo en el briefing.
-- Si un día de GYM coincide con otro entrenamiento del calendario, crearlo igual y avisarlo para que él decida.
-- Lesión activa: si hay un proyecto de recuperación de una lesión en curso (ej. "Recuperación del desgarro" con Status In Progress), NO crear los GYM. En la línea de recurrentes del briefing, preguntar qué entrenamientos van esa semana (manda el plan del fisio) y no restar GYM en la capacidad.
+- Los entrenamientos (GYM, fisio, etc.) no se crean acá: se planifican en la skill `weekly-review`.
 
 ## Reglas de capacidad
 Capacidad = horas por día disponibles para tareas propias. El día tiene las mismas horas aunque empiece antes: entrenamientos y eventos restan del presupuesto del día sin importar a qué hora sean.
@@ -44,11 +40,11 @@ Capacidad = horas por día disponibles para tareas propias. El día tiene las mi
 - Sábado y domingo: sin capacidad.
 - Restar la parte de cada evento del calendario principal y de "Morcillas" que cae antes de las 20:00. Los eventos que empiezan a las 20:00 o después no se cuentan (son sociales). No restar los bloques de Trabajo ni los eventos de día completo.
 - Práctica Fútbol: contar desde las 18:30 (traslado) hasta las 20:00, es decir 1.5 h.
-- GYM de martes y viernes: se resta por su evento del calendario. Si no se pudo agendar, restar 1 h igual.
+- Entrenamientos ya agendados en el calendario se restan como cualquier evento. Los que se planifiquen en la weekly se restan ahí.
 - Entrenamientos o turnos que él va a hacer pero sin día confirmado (ej. un GYM extra, fisioterapia): restarlos como una fila "Reserva" al final de la tabla (horas × 0.7 del total), no de un día puntual. Preguntar si los hay.
 - Mínimo 0 h por día.
 - Capacidad planificable = horas libres × 0.7 (el 30% es colchón).
-- Carga ya agendada = suma de Tiempo de tareas abiertas con Do Date ese día (Medio día = 4 h). No sumar las tareas que ya tienen su propio evento en el calendario (GYM y Weekly Review), porque ya se restaron.
+- Carga ya agendada = suma de Tiempo de tareas abiertas con Do Date ese día (Medio día = 4 h). No sumar las tareas que ya tienen su propio evento en el calendario (ej. Weekly Review o GYM), porque ya se restaron.
 
 ## Pasos
 1. Identificar la semana que termina y su página en Weeks, y la semana a planificar.

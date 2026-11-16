@@ -10,7 +10,7 @@ Conversación guiada, **un paso por mensaje**: se presenta el paso, se espera su
 ## Referencias
 - Las de `briefing-semanal` (Weeks, Weekly Goals, Task DB, Projects, Quarters, Seguimiento Editoriales, calendarios). Zona horaria America/Montevideo.
 - Semana que termina = la ISO anterior si hoy es lunes; si no, la en curso. La review se hace en su página "Semana NN - AA". La semana a planificar es la siguiente.
-- Skills que usa: `briefing-semanal` (paso 0), `planificar-semana` (paso 5), `contactar-editorial` (si hay que preparar envíos).
+- Skills que usa: `briefing-semanal` (paso 0), `planificar-semana` (paso 6), `contactar-editorial` (si hay que preparar envíos).
 
 ## Pasos
 
@@ -22,13 +22,15 @@ Conversación guiada, **un paso por mensaje**: se presenta el paso, se espera su
 
 3. **Projects scan.** Tabla de proyectos activos (In Progress, Planning, Not started) con su próxima acción y una propuesta de tareas a crear (➕), sobre todo para los proyectos de metas del Q cuyos indicadores piden algo esta semana. Para editoriales, armar las tareas desde Seguimiento Editoriales (Próxima acción de las "No enviado"). Proponer cerrar proyectos terminados o pasar a Someday los que no se mueven. Con su OK: crear las tareas con Tiempo y Status = Next Up, cambiar Status de proyectos y tildar en la página del Quarter las metas que dé por cumplidas.
 
-4. **Weekly Goals.** Proponer 2 o 3 candidatos (los del briefing, ajustados con lo que salió en los pasos 1 a 3). Él elige. Crearlos en Weekly Goals con Name, Priority (1st, 2nd, 3rd), Señal medible, Projects y relación con la página de la semana a planificar. Si un goal implica eventos (ej. sesiones de fisio), crearlos en el calendario principal con su OK, y preguntar qué pasa con entrenamientos que se superpongan.
+4. **Weekly Goals.** Proponer 2 o 3 candidatos (los del briefing, ajustados con lo que salió en los pasos 1 a 3). Él elige. Crearlos en Weekly Goals con Name, Priority (1st, 2nd, 3rd), Señal medible, Projects y relación con la página de la semana a planificar.
 
-5. **Plan de la semana.** Recién ahora correr `planificar-semana` con los goals fijados.
+5. **Entrenamientos.** Proponer los entrenamientos de la semana a planificar: mínimo 3 (hábito del Q), contando los que ya están en el calendario (Práctica Fútbol, Cross Training, etc.). Por defecto, GYM martes y viernes, 1 h, en el primer hueco libre entre 7:00 y 9:00 o, si no hay, entre 18:00 y 20:00. Si hay una lesión o un plan de fisio en curso, preguntar qué manda el plan y qué entrenamientos se suspenden. Avisar superposiciones. Con su OK: crear en Task DB una tarea por entrenamiento (nombre del entrenamiento, Tiempo, Do Date sin hora) y su evento en el calendario principal; borrar los que cancele. Antes de crear, comprobar que no existan (misma tarea y Do Date, mismo evento ese día).
 
-6. **Pipelines.** Waiting sin seguimiento o con más de 30 días: proponer fecha de seguimiento, dejar o borrar.
+6. **Plan de la semana.** Recién ahora correr `planificar-semana` con los goals y los entrenamientos fijados.
 
-7. **Cierre.** Recordar lo manual (limpiar descargas y fotos). Confirmar que existe la página de la semana a planificar (si no, ofrecer crearla). Marcar Done la tarea "Weekly Review" del día. Cerrar con un resumen corto de la semana día por día.
+7. **Pipelines.** Waiting sin seguimiento o con más de 30 días: proponer fecha de seguimiento, dejar o borrar.
+
+8. **Cierre.** Recordar lo manual (limpiar descargas y fotos). Confirmar que existe la página de la semana a planificar (si no, ofrecer crearla). Marcar Done la tarea "Weekly Review" del día. Cerrar con un resumen corto de la semana día por día.
 
 ## Estilo
 - Español rioplatense, breve. Tablas para indicadores, proyectos y plan. No usar el separador '---'.
