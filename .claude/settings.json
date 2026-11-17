@@ -3,19 +3,5 @@
     "additionalDirectories": [
       "/Users/juanmanueltrelles/Library/CloudStorage/OneDrive-Personal/Personal Admin/Cuentos/LCFP"
     ]
-  },
-  "hooks": {
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/auto-commit.sh",
-            "timeout": 60,
-            "statusMessage": "Revisando cambios sin commitear..."
-          }
-        ]
-      }
-    ]
   }
 }
