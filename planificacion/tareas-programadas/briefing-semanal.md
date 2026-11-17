@@ -2,6 +2,8 @@
 
 Origen: tarea programada de claude.ai (trig_01F9PYGKmwmppXMRDnoJzF6k). Cron: `CRON_TZ=America/Montevideo 40 5 * * 1`. Notificaciones: correo. Conectores: Notion, Gmail, Calendar, Drive, Sheets, Todoist.
 
+Estado: sigue corriendo en claude.ai con el prompt original. Lo de abajo es para cuando se migre.
+
 ## Prompt
 
 Corré la skill briefing-semanal en modo sin supervisión.
