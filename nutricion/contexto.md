@@ -78,3 +78,7 @@ Compras: el súper se pide casi siempre a Tata (carrito en la web). La Molienda 
 - Briefing mensual (día 1, 5:28): crea las tareas mensuales (alquiler, Antel, BPS y Fonasa, cierre financiero, Monthly Review).
 - Briefing semanal (lunes, 5:40): desde el 10/11 ya no crea "Plan de Comidas" ni "Super"; agrega la sección de comidas (porciones de lo comido contra lo planificado).
 - Tarea "Planificar comidas" del lunes 23/11 creada en Notion; cada corrida de la skill crea la siguiente.
+
+## Notas
+
+- 17/11/2026: prueba del hook de commit automático (se puede borrar).
