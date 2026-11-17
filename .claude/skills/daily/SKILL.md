@@ -17,29 +17,23 @@ Rutas:
 ## Paso 0: cerrar el día anterior
 Si `PREV` existe y no termina con una línea `_Cerrado …_`, quedó sin cerrar: correr la skill `end-of-day` sobre `PREV` (fecha de `PREV`) antes de seguir, así lo tildado ayer queda Done en Notion y no reaparece hoy. Si Juanma no está para aprobar, aplicar solo los Done (lo tildado) y dejar lo pendiente para el resumen.
 
-## Paso 1: conectores
-Una llamada barata a cada uno, en paralelo: Notion (`notion-get-self`), Todoist (`user-info`), Gmail (buscar 1 hilo), Google Calendar (`list_calendars`), Google Sheets (leer 1 celda de la planilla Compras). Los que fallen van a `## Logins` con su arreglo ("claude.ai → Settings → Connectors → reconectar <nombre>").
-
-## Paso 2: importar Todoist
+## Paso 1: importar Todoist
 Correr la skill `todoist-a-notion` en modo sin supervisión (Inbox y Lista de compras). Guardar lo importado para `## Tips`.
 
-## Paso 3: datos del brief
-Seguir los pasos 1 a 10 de la skill `brief-matinal` (capacidad de hoy y 6 días con actualización de la base Capacidad, calendario, tareas de hoy, vencidas, seguimientos, fechas límite, Weekly Goals, correo, señal pendiente) con sus reglas de capacidad. No escribir el brief como mensaje: los datos van al archivo del paso 4.
+## Paso 2: datos del brief
+Seguir los pasos 1 a 10 de la skill `brief-matinal` (capacidad de hoy y 6 días con actualización de la base Capacidad, calendario, tareas de hoy, vencidas, seguimientos, fechas límite, Weekly Goals, correo, señal pendiente) con sus reglas de capacidad. No escribir el brief como mensaje: los datos van al archivo del paso 3.
 
 Además:
 - **Esta semana sin fecha**: tareas abiertas con Urgencia = Esta semana y sin Do Date.
 - Para cada tarea, guardar su URL de Notion (`https://app.notion.com/p/<id sin guiones>`), Tiempo, Urgencia, Due Date y proyecto.
 
-## Paso 4: escribir `HOY`
+## Paso 3: escribir `HOY`
 Si `HOY` ya existe (segunda corrida del día), no pisarlo: conservar los tildes, las notas `HH:MM:` y `## Done (unplanned)`, y solo agregar tareas nuevas de Notion y actualizar Meetings, Waiting, Heads-up y Tips.
 
 Formato (los títulos de sección van en inglés porque el board los usa como claves; el contenido en español; nunca usar el separador `---`):
 
 ```markdown
 # <Día de la semana> <AAAA-MM-DD>
-
-## Logins
-- OK: Notion, Todoist, Gmail, Calendar, Sheets.
 
 ## Meetings
 - <HH:MM>–<HH:MM> <evento>            (calendario principal y Morcillas; no Trabajo; viajes y día completo con "(todo el día)")
@@ -57,8 +51,8 @@ Formato (los títulos de sección van en inglés porque el board los usa como cl
 ## Waiting on others
 - <Quién o qué>: <qué se espera> (seguimiento DD/MM) · Card: [<Task>](<url>)
 
-## Slack to answer
-- <Remitente>: <qué pide, una línea> (Gmail, <cuándo>)
+## Email to answer
+- <Remitente>: <qué pide, una línea> (<cuándo>)
 
 ## Heads-up
 ### <Día DD/MM>
@@ -66,6 +60,7 @@ Formato (los títulos de sección van en inglés porque el board los usa como cl
 
 ## Tips
 - Importado de Todoist: …
+- Conectores o pasos que fallaron, si hubo (una línea cada uno).
 - Si la carga supera lo planificable: qué mover (primero lo que no tiene Urgencia = Esta semana ni Due Date cercana). Solo sugerir, no mover.
 - Señal pendiente: ¿cuál fue la señal de <día>? Anotala en Todoist como "señal: …".
 - Wins de hoy: elegí 1 a 3. Candidatos: …
@@ -79,6 +74,8 @@ Reglas de las líneas:
 - **extras** (solo si aplica, en este orden): `Esta semana` o `Sin apuro` (Urgencia), `due DD/MM` (Due Date), `Proyecto: <nombre>`, `Weekly Goal: <nombre>`.
 - El título va igual que en Notion (sin el emoji). Si dos tareas se llaman igual, agregar ` (DD/MM)` a la segunda.
 - **Heads-up**: Due Date en los próximos 3 días (sin hoy), un `###` por día en orden de fecha.
+- **Email to answer**: solo los correos de personas reales o trámites que piden una respuesta de Juanma (suelen ser pocos o ninguno). No listar avisos, facturas que no piden nada ni newsletters.
+- No hay sección de logins: si un conector o un paso falla, anotarlo en `## Tips` y seguir.
 - Omitir las secciones vacías, salvo `## Plan` y `## Done (unplanned)`.
 
 ## Respuesta
