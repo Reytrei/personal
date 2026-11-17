@@ -14,6 +14,14 @@ Objetivo: que Juan Manuel sepa en 1 minuto qué tiene hoy, si entra todo en sus 
 - Si un paso o un conector falla, anotarlo en una línea dentro del brief y seguir con el resto. Nunca cortar por un error parcial.
 - Antes de terminar, verificar que el último mensaje contenga el brief completo (omitiendo solo secciones vacías).
 
+## Si corre sin supervisión (tarea programada)
+La rutina tiene tres pasos obligatorios; terminar uno no termina la tarea, aunque no haya habido nada que importar. No hacer preguntas ni esperar confirmaciones.
+1. Correr la skill `todoist-a-notion` en modo sin supervisión (Inbox y Lista de compras) y guardar lo importado para el paso 9.
+2. Armar el brief con los pasos de abajo.
+3. Enviarlo por correo con send_message de Gmail a juanm.trelles@gmail.com. Asunto: "☀️ Morning brief DD/MM" (fecha de hoy). Cuerpo: el brief en texto plano, tal cual. Un solo correo por ejecución; no responder ni reenviar otros correos. Si el envío falla, reintentar una vez; si vuelve a fallar, indicarlo en la primera línea del mensaje final.
+
+Después del envío, el brief completo es el último mensaje.
+
 ## Referencias
 - Zona horaria: America/Montevideo.
 - Google Calendar: leer los calendarios principal (juanm.trelles@gmail.com), "Rutina" (bloques de Trabajo; el horario cambia según el mes, leerlo del calendario y no asumirlo) y "Morcillas" (compartido, viajes y planes). Listar calendarios si los IDs cambian.
@@ -35,13 +43,13 @@ Objetivo: que Juan Manuel sepa en 1 minuto qué tiene hoy, si entra todo en sus 
 ## Pasos
 1. **Capacidad (hoy y los próximos 6 días)**: calcularla con las reglas y actualizar la base Capacidad. Para cada fecha: si ya hay una fila con esa Fecha, actualizarla; si no, crearla con Día = "Lun 26/10" (abreviatura del día y DD/MM). No borrar filas viejas.
 2. **Calendario de hoy**: eventos con hora. Señalar viajes o eventos de todo el día.
-3. **Tareas de hoy**: Task DB con Do Date = hoy y Done = false. Sumar Tiempo (5 min, 15 min, 30 min, 1 h, 2 h, Medio día = 4 h), sin contar GYM ni Weekly Review si tienen evento en el calendario. Comparar con el Planificable de hoy. Si la suma lo supera, decirlo claro y sugerir qué mover. Listar aparte las que no tienen Tiempo.
+3. **Tareas de hoy**: Task DB con Do Date = hoy y Done = false. Sumar Tiempo (5 min, 15 min, 30 min, 1 h, 2 h, Medio día = 4 h), sin contar GYM ni Weekly Review si tienen evento en el calendario. Comparar con el Planificable de hoy. Si la suma lo supera, decirlo claro y sugerir qué mover (primero las que no tienen Urgencia = Esta semana ni Due Date cercana). Listar aparte las que no tienen Tiempo.
 4. **Vencidas**: Do Date < hoy y Done = false. Agrupar si son muchas.
 5. **Seguimientos**: Status = Waiting con Do Date <= hoy (toca reclamar).
 6. **Fechas límite próximas**: Due Date en los próximos 3 días.
 7. **Weekly Goals**: los de la semana actual, con su estado.
-8. **Correo**: hilos de las últimas 24 h en la bandeja principal de Gmail que pidan acción o respuesta (personas reales, trámites, bancos, facturas, plazos). Ignorar promociones, newsletters y notificaciones automáticas. Máximo 5, una línea cada uno con qué pide.
-9. **Importado de Todoist**: si en esta corrida se importaron tareas o señales, listarlas con lo que se asignó.
+8. **Correo**: hilos de las últimas 24 h en la bandeja principal de Gmail que pidan acción o respuesta (personas reales, trámites, bancos, facturas, plazos). Ignorar promociones, newsletters, notificaciones automáticas y los correos "Morning brief" de días anteriores. Máximo 5, una línea cada uno con qué pide.
+9. **Importado de Todoist**: si en esta corrida se importaron tareas, señales o compras, listarlas con lo que se asignó. Para compras, una línea con la cantidad agregada a Pendientes y los productos.
 10. **Señal pendiente**: si en Win Today no existe la fila "Señal DD/MM" del día hábil anterior (los lunes, la del viernes), terminar con: "¿Cuál fue la señal de [día]? Anotala en Todoist como 'señal: ...' y mañana la cargo."
 11. **Cierre**: una pregunta corta para elegir 1 a 3 wins del día, sugiriendo candidatos alineados con los Weekly Goals.
 
