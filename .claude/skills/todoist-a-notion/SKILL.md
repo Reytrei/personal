@@ -35,7 +35,7 @@ Todoist es la única bandeja de captura. Notion es el sistema. Este proceso muev
      - En cualquier otro caso, dejarla vacía (cuenta como Normal).
    - **Do Date**: SOLO si la tarea trae fecha desde Todoist. Nunca inventar fechas.
    - **Due Date**: solo si el texto o la descripción mencionan un plazo explícito. No confundir con Do Date: Do Date es cuándo planifica hacerla, Due Date es el vencimiento.
-   - La descripción de Todoist, si existe, va como contenido de la página.
+   - **Descripción** (contenido de la página, siempre): qué hay que hacer y cuándo está lista, en 1 a 3 líneas, a partir del texto y la descripción de Todoist (esta última va también, tal cual, debajo). Si no se puede saber qué es o cuándo está lista, es una **duda**: en corrida manual se pregunta (ver abajo); sin supervisión, crear la página con `Descripción pendiente: <qué falta saber>` como primera línea.
 5. Completar en Todoist cada ítem (tarea o señal) que se creó bien en Notion. Si una creación falló, no completarlo en Todoist.
 6. Lo que queda sin fecha ni proyecto aparece solo en la vista "Por decidir" de Task DB; no hace falta hacer nada más.
 7. **Compras** (Lista de compras → planilla Compras; no crea nada en Notion):
@@ -46,10 +46,10 @@ Todoist es la única bandeja de captura. Notion es el sistema. Este proceso muev
    - Después de escribir, volver a leer Pendientes y completar en Todoist SOLO las tareas cuyo ID quedó cargado.
 
 ## Si Juan Manuel está presente (corrida manual)
-Antes de crear, mostrar una tabla con la propuesta (Tarea, Do Date, Due Date, Proyecto, Urgencia, Tiempo), las señales detectadas con el día asignado y las compras con su comercio, y esperar su OK o correcciones.
+Antes de crear, mostrar una tabla con la propuesta (Tarea, Descripción, Do Date, Due Date, Proyecto, Urgencia, Tiempo), las señales detectadas con el día asignado y las compras con su comercio. Debajo, las dudas numeradas, una por tarea, con opciones cuando se pueda (ej. "¿'Llamar a Pedro' es por el presupuesto del baño o por el cumpleaños?"). Esperar su OK, correcciones y respuestas; con eso, crear.
 
 ## Si corre sin supervisión (rutina matinal)
-Aplicar las reglas de arriba sin preguntar y devolver la lista de lo importado (tareas, señales y compras) con lo que se asignó, para que lo revise en el brief. Si un paso falla, anotarlo y seguir con el resto.
+Aplicar las reglas de arriba sin preguntar y devolver la lista de lo importado (tareas, señales y compras) con lo que se asignó, marcando las que quedaron con `Descripción pendiente`, para que lo revise en el brief. Si un paso falla, anotarlo y seguir con el resto.
 
 ## Reglas
 - Nunca borrar en Todoist; solo completar.
