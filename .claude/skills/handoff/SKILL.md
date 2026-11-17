@@ -8,10 +8,10 @@ argument-hint: "[url o id de la tarea de Notion]"
 
 Escribe el estado de la sesión **en la página de la tarea de Notion**, no en un archivo. El lector no tiene acceso a esta conversación: es otra sesión de Claude o Juanma dentro de unos días. No usar etiquetas internas ("opción B", "paso 2") sin explicarlas.
 
-Escribe solo: la sección `## Estado` (y `## Historial`) de esa página, y una nota en el plan del día. Nada más.
+Escribe solo en Notion: la sección `## Estado` (y `## Historial`) de esa página y, si la tarea quedó terminada, Done = true. No toca `daily/`: el archivo del día es la foto de la mañana para el board, y Notion es la fuente.
 
 ## Paso 1: la tarea
-La página de Task DB que esta sesión trabaja: el argumento, la línea `Notion task: <url>` del primer mensaje (sesiones abiertas desde el board), o la línea del plan de hoy (`~/personal/daily/<hoy>.md`). Si no está claro, preguntar; nunca adivinar. Si el trabajo no tiene tarea en Notion, preguntar si crear una en Task DB (Task, Tiempo y nada más) o no dejar estado.
+La página de Task DB que esta sesión trabaja: el argumento, la línea `Notion task: <url>` del primer mensaje (sesiones abiertas desde el board), o la línea del plan de hoy (`~/personal/daily/<hoy>.md`, solo para leer). Si no está claro, preguntar; nunca adivinar. Si el trabajo no tiene tarea en Notion, preguntar si crear una en Task DB (Task, Tiempo y nada más) o no dejar estado.
 
 ## Paso 2: juntar hechos, no recordarlos
 - Archivos creados o editados: ruta completa y si quedaron commiteados (`git status -sb` en el repo).
@@ -34,13 +34,7 @@ DD/MM HH:MM · sesión "<nombre de la sesión>" · <en curso | esperando a Juanm
 **Archivos y links:** <ruta o link: qué es y su estado>
 ```
 
-Omitir los renglones vacíos (sin preguntas no va "Preguntas para Juanma"). Si la tarea quedó terminada, "Falta" no va y el estado es `terminada`.
-
-## Paso 4: el plan del día
-En `~/personal/daily/<hoy>.md`, bajo la línea de la tarea:
-- Terminada: tildarla (`- [x] … · done HH:MM: <resultado en una línea>`). `/end-of-day` la pasa a Done en Notion.
-- No terminada: agregar una nota `  - HH:MM: <estado en una línea>. Next: <Falta 1>`.
-Si la tarea no está en el plan de hoy, no tocar el archivo.
+Omitir los renglones vacíos (sin preguntas no va "Preguntas para Juanma"). Si la tarea quedó terminada, "Falta" no va, el estado es `terminada` y se marca Done = true en la página (única propiedad que se toca).
 
 ## Respuesta
 Una línea: qué quedó en Notion (estado y Falta 1), con el link a la página.
