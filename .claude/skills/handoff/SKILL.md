@@ -19,7 +19,7 @@ La página de Task DB que esta sesión trabaja: el argumento, la línea `Notion 
 - Lo que se decidió y quién lo decidió (Juanma, o propuesta de Claude sin confirmar).
 
 ## Paso 3: escribir en Notion
-Leer la página. Si ya tiene `## Estado`, pasarlo a una línea al final de `## Historial` (crearla si no existe) con el formato `- DD/MM: <estado anterior en una línea>`, y reemplazar `## Estado` por el nuevo. Si no tiene, agregar `## Estado` al final del contenido. No tocar el resto de la página ni sus propiedades.
+Leer la página. Si ya tiene `## Estado`, pasarlo a una línea al final de `## Historial` (crearla si no existe) con el formato `- DD/MM: <estado anterior en una línea>`, y reemplazar `## Estado` por el nuevo. Si no tiene, agregar `## Estado` al final del contenido. No tocar el resto de la página ni sus propiedades (salvo Done, abajo).
 
 ```markdown
 ## Estado
