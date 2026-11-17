@@ -15,6 +15,7 @@ Repo de la vida personal de Juanma. Cada carpeta es un tema con su propio `CLAUD
 | Carpeta | Tema |
 |---|---|
 | `planificacion/` | Sistema de tareas y rutinas: morning brief, weekly, monthly, Todoist, Notion |
+| `daily/` | Plan de cada día del board personal (lo escribe `/daily`, lo cierra `/end-of-day`) |
 | `finanzas/` | Finanzas personales y de la casa (hoja Finanzas 2026, importaciones, cierre) |
 | `hogar/` | Compras de la casa (planilla Compras, comercios, carnicería) |
 | `nutricion/` | Plan de comidas con la nutricionista |
