@@ -1,6 +1,6 @@
 ---
 name: "todoist-a-notion"
-description: "Procesa el Inbox de Todoist de Juan Manuel y migra cada tarea a Task DB en Notion. Usar cuando pida 'procesa mi inbox' o importar tareas de Todoist."
+description: "Procesa el Inbox de Todoist de Juan Manuel (tareas a Task DB y señales a Win Today en Notion) y la Lista de compras (a la planilla Compras). Usar cuando pida 'procesa mi inbox' o importar tareas de Todoist."
 ---
 
 # Importar Inbox de Todoist a Notion
@@ -13,11 +13,13 @@ Todoist es la única bandeja de captura. Notion es el sistema. Este proceso muev
 - Projects (data source): collection://9c4c5809-fcf0-4783-9e5a-71e03f4eb42b (usar solo proyectos con Status In Progress, Planning o Not started; consultarlos en cada corrida)
 - Win Today (señales diarias): collection://6d18da52-9e8e-828f-a39c-8793ee33189d (Daily Goal = título, Señal = texto, 🎢 Weeks = relación)
 - Weeks: collection://f914dcf1-83a8-418a-86b6-6a3637a43994 (páginas "Semana NN - AA", semana ISO)
+- Todoist "Lista de compras": projectId 6hr9fqPq7rQRwQrp.
+- Planilla Google Sheets "Compras": id 1BFvM-VzSs784I43GmrqDg4T4b6Ltpiy7VSO2lhKRuwU (pestañas Pendientes, Referencia, Historial).
 - Propiedades de Task DB: Task (título), Do Date (fecha), Due Date (fecha), Projects (relación), Urgencia (select: Esta semana, Normal, Sin apuro; vacío = Normal), Status (select; Waiting = depende de otro), Tiempo (select: 5 min, 15 min, 30 min, 1 h, 2 h, Medio día), Done (checkbox).
 
 ## Pasos
 1. Leer todas las tareas abiertas del Inbox de Todoist (projectId "inbox").
-2. Si no hay nada, decirlo en una línea y terminar.
+2. Si no hay nada, decirlo en una línea y seguir con Compras (paso 7).
 3. **Señales**: si el texto empieza con "señal:" o "senal:" (sin importar mayúsculas), NO es una tarea. Crear una fila en Win Today con:
    - **Daily Goal** = "Señal DD/MM" (día al que corresponde).
    - **Señal** = el texto sin el prefijo.
@@ -36,12 +38,18 @@ Todoist es la única bandeja de captura. Notion es el sistema. Este proceso muev
    - La descripción de Todoist, si existe, va como contenido de la página.
 5. Completar en Todoist cada ítem (tarea o señal) que se creó bien en Notion. Si una creación falló, no completarlo en Todoist.
 6. Lo que queda sin fecha ni proyecto aparece solo en la vista "Por decidir" de Task DB; no hace falta hacer nada más.
+7. **Compras** (Lista de compras → planilla Compras; no crea nada en Notion):
+   - Leer todas las tareas abiertas del proyecto "Lista de compras". Si no hay, terminar.
+   - Leer la columna G de la pestaña Pendientes y saltear las tareas cuyo ID ya esté cargado.
+   - Por cada tarea nueva, agregar una fila al final de Pendientes (columnas A:G): **Fecha alta** = fecha de captura en Todoist (addedAt, hora de Montevideo) como DD/MM/AAAA; **Producto** = texto limpio sin la cantidad; **Cantidad** = la cantidad si viene en el texto o la descripción (ej. "x2", "1 kg"), si no vacía; **Dónde comprar** = el valor de la columna E de la pestaña Referencia si el producto coincide claramente con una fila de la columna A, si no "A definir"; **Estado** = "Pendiente"; **Notas** = la descripción de Todoist, si la hay; **ID Todoist** = el id de la tarea.
+   - No tocar las pestañas Referencia ni Historial.
+   - Después de escribir, volver a leer Pendientes y completar en Todoist SOLO las tareas cuyo ID quedó cargado.
 
 ## Si Juan Manuel está presente (corrida manual)
-Antes de crear, mostrar una tabla con la propuesta (Tarea, Do Date, Due Date, Proyecto, Urgencia, Tiempo) y las señales detectadas con el día asignado, y esperar su OK o correcciones.
+Antes de crear, mostrar una tabla con la propuesta (Tarea, Do Date, Due Date, Proyecto, Urgencia, Tiempo), las señales detectadas con el día asignado y las compras con su comercio, y esperar su OK o correcciones.
 
 ## Si corre sin supervisión (rutina matinal)
-Aplicar las reglas de arriba sin preguntar y devolver la lista de lo importado (tareas y señales) con lo que se asignó, para que lo revise en el brief.
+Aplicar las reglas de arriba sin preguntar y devolver la lista de lo importado (tareas, señales y compras) con lo que se asignó, para que lo revise en el brief. Si un paso falla, anotarlo y seguir con el resto.
 
 ## Reglas
 - Nunca borrar en Todoist; solo completar.
