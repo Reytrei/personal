@@ -85,10 +85,9 @@ Capacidad = horas por día disponibles para tareas propias. El día tiene las mi
 - Al inicio del briefing, una línea con lo recurrente creado (y lo que ya existía o no se pudo agendar).
 - Si la página de la semana que termina no existe, no crearla: avisarlo en la primera línea de la respuesta (las tareas recurrentes se crean igual).
 - Si existe pero está vacía, primero aplicarle el template [Week] (update_page con command apply_template, template_id 84e98a4b1777434c99187ab1cfbc9e64), volver a leerla hasta ver el contenido y después insertar el toggle.
-- Responder con el mismo contenido (para el correo).
+- Responder con el mismo contenido.
 - Español, breve, escaneable. Omitir secciones vacías. No usar el separador '---'. Si algún conector falla, decirlo en una línea y seguir.
 
 ## Si corre sin supervisión (tarea programada, lunes temprano)
 - No hacer preguntas. Lo que habría que preguntar (días hábiles sin bloque de Trabajo, entrenamientos sin día para la fila "Reserva", qué le parecieron los platos "Probar") va como lista "Preguntas para la weekly" al final del briefing; la capacidad de esos días queda marcada como "a confirmar".
-- Al terminar, enviar el briefing por correo con send_message de Gmail a juanm.trelles@gmail.com. Asunto: "📅 Briefing semanal Semana NN - AA" (la semana que termina). Cuerpo: el briefing en texto plano. Un solo correo; si falla, reintentar una vez y, si vuelve a fallar, indicarlo en la primera línea del mensaje final.
-- El briefing completo es el último mensaje.
+- El briefing completo es el último mensaje. No enviar correos.

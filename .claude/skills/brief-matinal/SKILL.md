@@ -8,19 +8,18 @@ description: "Arma el morning brief de Juan Manuel: calendario, tareas de hoy vs
 Objetivo: que Juan Manuel sepa en 1 minuto qué tiene hoy, si entra todo en sus horas libres y qué merece atención. Lo único que escribe este proceso es la base Capacidad (paso 1); todo lo demás es solo lectura.
 
 ## Reglas de entrega (obligatorias)
-- El resultado de esta skill es el brief escrito como texto en la respuesta final. En una tarea programada, ese último mensaje es lo único que se envía por push y correo: si no existe, Juan Manuel no recibe nada.
+- El resultado de esta skill es el brief escrito como texto en la respuesta final. En una tarea programada, ese último mensaje es lo que Juan Manuel lee en Claude Code: si no existe, no tiene brief.
 - Si esta skill se usa después de "todoist-a-notion", la importación NO termina la tarea: siempre hay que completar todos los pasos de abajo y escribir el brief.
 - No usar la skill "morning", no publicar artifacts ni crear archivos o documentos: el brief va solo como texto.
 - Si un paso o un conector falla, anotarlo en una línea dentro del brief y seguir con el resto. Nunca cortar por un error parcial.
 - Antes de terminar, verificar que el último mensaje contenga el brief completo (omitiendo solo secciones vacías).
 
 ## Si corre sin supervisión (tarea programada)
-La rutina tiene tres pasos obligatorios; terminar uno no termina la tarea, aunque no haya habido nada que importar. No hacer preguntas ni esperar confirmaciones.
+La rutina tiene dos pasos obligatorios; terminar el primero no termina la tarea, aunque no haya habido nada que importar. No hacer preguntas ni esperar confirmaciones.
 1. Correr la skill `todoist-a-notion` en modo sin supervisión (Inbox y Lista de compras) y guardar lo importado para el paso 9.
 2. Armar el brief con los pasos de abajo.
-3. Enviarlo por correo con send_message de Gmail a juanm.trelles@gmail.com. Asunto: "☀️ Morning brief DD/MM" (fecha de hoy). Cuerpo: el brief en texto plano, tal cual. Un solo correo por ejecución; no responder ni reenviar otros correos. Si el envío falla, reintentar una vez; si vuelve a fallar, indicarlo en la primera línea del mensaje final.
 
-Después del envío, el brief completo es el último mensaje.
+El brief completo es el último mensaje. No enviar correos.
 
 ## Referencias
 - Zona horaria: America/Montevideo.
@@ -48,7 +47,7 @@ Después del envío, el brief completo es el último mensaje.
 5. **Seguimientos**: Status = Waiting con Do Date <= hoy (toca reclamar).
 6. **Fechas límite próximas**: Due Date en los próximos 3 días.
 7. **Weekly Goals**: los de la semana actual, con su estado.
-8. **Correo**: hilos de las últimas 24 h en la bandeja principal de Gmail que pidan acción o respuesta (personas reales, trámites, bancos, facturas, plazos). Ignorar promociones, newsletters, notificaciones automáticas y los correos "Morning brief" de días anteriores. Máximo 5, una línea cada uno con qué pide.
+8. **Correo**: hilos de las últimas 24 h en la bandeja principal de Gmail que pidan acción o respuesta (personas reales, trámites, bancos, facturas, plazos). Ignorar promociones, newsletters, notificaciones automáticas y los correos "Morning brief" de días anteriores (de cuando el brief se mandaba por correo). Máximo 5, una línea cada uno con qué pide.
 9. **Importado de Todoist**: si en esta corrida se importaron tareas, señales o compras, listarlas con lo que se asignó. Para compras, una línea con la cantidad agregada a Pendientes y los productos.
 10. **Señal pendiente**: si en Win Today no existe la fila "Señal DD/MM" del día hábil anterior (los lunes, la del viernes), terminar con: "¿Cuál fue la señal de [día]? Anotala en Todoist como 'señal: ...' y mañana la cargo."
 11. **Cierre**: una pregunta corta para elegir 1 a 3 wins del día, sugiriendo candidatos alineados con los Weekly Goals.

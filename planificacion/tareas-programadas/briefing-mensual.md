@@ -4,6 +4,6 @@ Origen: tarea programada de claude.ai (trig_01GhYiAY1B6G3hXkJP2F2YNc). Cron: `CR
 
 ## Prompt
 
-Corré la skill briefing-mensual en modo sin supervisión y mandá el resultado por correo.
+Corré la skill briefing-mensual en modo sin supervisión.
 
 Toda la lógica vive en la skill. El prompt original de claude.ai está en el historial de git (commit cf2ce77).

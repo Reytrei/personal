@@ -59,5 +59,4 @@ La Monthly es un control de rumbo sobre las metas del trimestre: este proceso pr
 
 ## Si corre sin supervisión (tarea programada, día 1)
 - No hacer preguntas.
-- Al terminar, enviar el briefing por correo con send_message de Gmail a juanm.trelles@gmail.com. Asunto: "🗓️ Briefing mensual <Mes> - AA" (el mes que terminó). Cuerpo: el briefing en texto plano. Un solo correo; si falla, reintentar una vez y, si vuelve a fallar, indicarlo en la primera línea del mensaje final.
-- El briefing completo es el último mensaje.
+- El briefing completo es el último mensaje. No enviar correos.

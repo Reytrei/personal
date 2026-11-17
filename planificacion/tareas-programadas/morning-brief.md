@@ -4,6 +4,6 @@ Origen: tarea programada de claude.ai (trig_01XofNu7NuLt9sDPMbH7CUT6). Cron: `CR
 
 ## Prompt
 
-Corré la skill brief-matinal en modo sin supervisión (incluye importar Todoist y mandar el brief por correo).
+Corré la skill brief-matinal en modo sin supervisión (incluye importar Todoist).
 
 Toda la lógica vive en la skill. El prompt original de claude.ai está en el historial de git (commit cf2ce77).
