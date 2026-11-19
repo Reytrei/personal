@@ -10,6 +10,8 @@ Una corrida a la mañana, desde el botón **Start day** del board personal (http
 
 **Notion es la fuente de las tareas.** El archivo del día es una foto de trabajo: se arma desde Notion cada mañana y `/end-of-day` devuelve a Notion lo que se hizo. Nunca inventar tareas ni fechas.
 
+**Nunca cambiar la Do Date (ni la Due Date) de una tarea sin el OK explícito de Juanma.** Organizar el día es sugerir: si algo no entra o conviene moverlo, se propone en la pregunta del paso 1 o en `## Tips`, y solo se escribe en Notion lo que Juanma aprobó tarea por tarea. Sin respuesta, no se mueve nada.
+
 Rutas:
 - `DAILY` = `~/personal/daily`, `HOY` = `DAILY/<fecha>.md` (fecha = el argumento, o hoy en America/Montevideo).
 - `PREV` = el archivo más nuevo de `DAILY` anterior a la fecha.
