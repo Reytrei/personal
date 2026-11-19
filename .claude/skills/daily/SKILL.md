@@ -15,12 +15,16 @@ Rutas:
 - `PREV` = el archivo más nuevo de `DAILY` anterior a la fecha.
 
 ## Paso 0: cerrar el día anterior
-Si `PREV` existe y no termina con una línea `_Cerrado …_`, quedó sin cerrar: correr la skill `end-of-day` sobre `PREV` (fecha de `PREV`) antes de seguir, así lo tildado ayer queda Done en Notion y no reaparece hoy. Si Juanma no está para aprobar, aplicar solo los Done (lo tildado) y dejar lo pendiente para el resumen.
+Si `PREV` existe y no termina con una línea `_Cerrado …_`, quedó sin cerrar: correr la skill `end-of-day` sobre `PREV` (fecha de `PREV`) antes de seguir, así lo tildado ayer queda Done en Notion y no reaparece hoy.
+
+Después, juntar los **pendientes de ayer**: las líneas de `### Must do` de `PREV` sin tildar cuya tarea sigue con Done = false en Notion. `/end-of-day` no las mueve; se deciden acá, en la pregunta del paso 1.
 
 ## Paso 1: importar Todoist
 Juanma está presente (tocó Start day): correr la skill `todoist-a-notion` en **corrida manual** (Inbox y Lista de compras), con la tabla de propuesta y las dudas sobre qué es cada tarea, y esperar su respuesta antes de crear. Si no hay nada que importar, seguir sin preguntar. Guardar lo importado para `## Tips`.
 
 En la misma pregunta, sumar las tareas abiertas de Task DB cuyo contenido empieza con `Descripción pendiente:` o está vacío y que se crearon desde `PREV` (por ejemplo, las que importó el Morning brief de claude.ai): proponer su descripción y preguntar lo que falte. Con las respuestas, completar el contenido de esas páginas.
+
+En la misma pregunta, los pendientes de ayer (paso 0): una tabla con Task, Tiempo, Due Date, la Falta 1 de su `## Estado` y una sugerencia (hoy, el próximo día hábil con Planificable libre según la base Capacidad, o sin fecha). Juanma elige para cada una; con la respuesta, cambiar su Do Date en Notion (nunca la Due Date). Si no hay pendientes, no preguntar por esto.
 
 ## Paso 2: datos del brief
 Seguir los pasos 1 a 10 de la skill `brief-matinal` (capacidad de hoy y 6 días con actualización de la base Capacidad, calendario, tareas de hoy, vencidas, seguimientos, fechas límite, Weekly Goals, correo, señal pendiente) con sus reglas de capacidad. No escribir el brief como mensaje: los datos van al archivo del paso 3.
