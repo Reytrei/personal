@@ -1,6 +1,6 @@
 ---
 name: "end-of-day"
-description: "Cierre del día de Juan Manuel desde el board personal (botón End day): deja en Notion el estado de las sesiones del día que no lo dejaron, pasa a Notion lo que se tildó en daily/AAAA-MM-DD.md (Done) Corre sin preguntas: no planifica ni mueve fechas. Usar cuando corra /end-of-day o pida cerrar el día."
+description: "Cierre del día de Juan Manuel desde el board personal (botón End day): deja en Notion el estado de las sesiones del día que no lo dejaron, pasa a Notion lo que se tildó en daily/AAAA-MM-DD.md (Done). Corre sin preguntas: no planifica ni mueve fechas. Usar cuando corra /end-of-day o pida cerrar el día."
 argument-hint: "[AAAA-MM-DD]"
 ---
 
