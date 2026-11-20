@@ -35,7 +35,7 @@ Las skills están en `.claude/skills/`.
 ## Sesiones que trabajan una tarea de Notion
 Una tarea de Task DB es la unidad de trabajo: la sesión la recibe como `Notion task: <url>` (desde el board) o por una línea del plan de hoy.
 - **Estado en Notion, sin pedirlo:** al terminar cada paso, al quedar esperando una respuesta o acción de Juanma, y antes de cortar, correr la skill `handoff`. Deja `## Estado` en la página (hecho, falta, preguntas, archivos y links) y, si la tarea quedó terminada, Done = true. Saltearlo en preguntas cortas.
-- **Notion es la fuente; `daily/` es la vista:** las sesiones no editan `daily/<hoy>.md`. Ese archivo lo escribe `/daily` a la mañana y lo cierra `/end-of-day`; lo que se tilda en el board, `/end-of-day` lo pasa a Notion.
+- **Notion es la fuente; `daily/` es la vista:** las sesiones no editan `daily/<hoy>.md`. Ese archivo lo escribe `/daily` a la mañana y lo cierra `/end-of-day`; lo que se tilda en el board, `/end-of-day` lo pasa a Notion. Única excepción: cuando `handoff` marca Done = true, tilda esa línea en el plan de hoy.
 - **Trabajo nuevo:** si aparece algo que no es parte de la tarea, proponer crearlo en Task DB (con Tiempo y descripción) y no crearlo sin el OK de Juanma.
 - **Cierre de turno:** cuando un turno termina un paso o queda esperando a Juanma, terminar con este bloque (el board lee las dos líneas en inglés):
   ```
