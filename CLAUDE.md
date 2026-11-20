@@ -47,5 +47,5 @@ Una tarea de Task DB es la unidad de trabajo: la sesión la recibe como `Notion 
 
 ## Sistemas externos
 
-- Tareas: Notion (Task DB). Captura: Todoist. Migración a archivos locales pendiente (ver proyecto "Migración Claude Code" en Notion).
+- Tareas: Notion (Task DB). Captura: Todoist. Migración de Notion a Obsidian (archivos locales) pendiente: proyecto "Note Taking" en Notion, junto con el sistema de notas (captura en Readwise).
 - Google: Gmail, Calendar (principal juanm.trelles@gmail.com, "Rutina", "Morcillas"), Drive y Sheets. Las planillas usan locale es_UY: fórmulas en español con punto y coma.
