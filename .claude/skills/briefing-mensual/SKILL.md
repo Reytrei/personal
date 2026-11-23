@@ -21,16 +21,16 @@ La Monthly es un control de rumbo sobre las metas del trimestre: este proceso pr
 - Google Calendar: principal (juanm.trelles@gmail.com), "Rutina" (ignorar los bloques de Trabajo) y "Morcillas".
 
 ## Tareas recurrentes del mes en curso
-- Crearlas en Task DB con Task, Do Date (solo fecha) y Tiempo, nada más: sin proyecto, sin Urgencia, sin Due Date, sin evento de calendario.
+- Crearlas en Task DB con Task, Do Date (solo fecha), Tiempo y Pillars (el de la tabla), nada más: sin proyecto, sin Urgencia, sin Due Date, sin evento de calendario.
 - No duplicar: antes de crear, buscar en Task DB una tarea con el mismo nombre y Do Date dentro del mes en curso; si existe, no crearla.
 
-| Tarea | Do Date | Tiempo |
-|---|---|---|
-| Pagar alquiler casa | primer lunes del mes | 5 min |
-| Pagar Antel | primer lunes del mes | 5 min |
-| Pagar BPS y Fonasa | primer lunes del mes | 5 min |
-| Cerrar mes financiero | primer lunes del mes | 1 h |
-| Monthly Review | ver abajo | 30 min |
+| Tarea | Do Date | Tiempo | Pilar |
+|---|---|---|---|
+| Pagar alquiler casa | primer lunes del mes | 5 min | Morcillas |
+| Pagar Antel | primer lunes del mes | 5 min | Morcillas |
+| Pagar BPS y Fonasa | primer lunes del mes | 5 min | Morcillas |
+| Cerrar mes financiero | primer lunes del mes | 1 h | Morcillas |
+| Monthly Review | ver abajo | 30 min | Life OS |
 
 - "Cerrar mes financiero" lleva además como contenido de la página: "Importar los movimientos del mes anterior, aprobarlos en la Bandeja y correr la skill cierre-financiero (manda el reporte por correo)."
 - "Monthly Review": el primer día hábil (lunes a viernes) entre el día 1 y el 7 con Planificable de al menos 30 min. Calcular la capacidad de cada día con las reglas de la skill `brief-matinal`, y al Planificable restarle la suma de Tiempo de las tareas que ya tienen esa Do Date y Done = false (Medio día = 240 min). Si ningún día llega a 30 min, usar el primer día hábil del mes y avisarlo.

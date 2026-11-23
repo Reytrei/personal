@@ -23,11 +23,11 @@ Objetivo: que Juan Manuel llegue a su Weekly Review recordando qué hizo, con la
 ## Tareas recurrentes de la semana a planificar
 Antes de crear algo, comprobar que no exista ya: en Task DB, una tarea con el mismo nombre y Do Date ese día; en el calendario principal, un evento con el mismo título ese día. Si existe, no duplicar.
 
-| Tarea | Do Date | Tiempo | Calendario |
-|---|---|---|---|
-| Weekly Review | lunes | 30 min | Evento "Weekly Review" de 30 min en el primer hueco libre del lunes entre 9:00 y 12:00 |
-| Importar finanzas | lunes | 15 min | No |
-| Revisar finanzas | lunes | 30 min | No |
+| Tarea | Do Date | Tiempo | Pilar | Calendario |
+|---|---|---|---|---|
+| Weekly Review | lunes | 30 min | Life OS | Evento "Weekly Review" de 30 min en el primer hueco libre del lunes entre 9:00 y 12:00 |
+| Importar finanzas | lunes | 15 min | Morcillas | No |
+| Revisar finanzas | lunes | 30 min | Morcillas | No |
 
 - No crear "Plan de Comidas" ni "Super": la planificación de comidas, las compras y las tareas de verdulería las crea la skill planificar-comidas cada dos semanas.
 - Hueco libre = sin eventos en el calendario principal ni en "Morcillas" (los bloques de Trabajo no cuentan como ocupado para la Weekly Review).
