@@ -63,7 +63,6 @@ Capacidad = horas por día disponibles para tareas propias. El día tiene las mi
 5. **Capacidad de la semana a planificar**: tabla por día con presupuesto, lo que se resta, horas libres, planificables (×0.7), carga ya agendada y margen. Cerrar con el total planificable y avisar los días sobrecargados.
 6. **Candidatas para la semana** (el pool del que elige):
    - Tareas con Urgencia = Esta semana.
-   - Tareas con Status = Next Up.
    - La próxima acción de cada proyecto vinculado al Quarter vigente (tarea abierta más cercana; si no hay, marcar "sin próxima acción").
    - Tareas con Due Date en los próximos 14 días y vencidas.
    - Lo que piden los indicadores del Q esa semana (ej. envíos a editoriales, posts de LinkedIn), indicando si ya hay tarea o falta crearla.
@@ -74,7 +73,7 @@ Capacidad = horas por día disponibles para tareas propias. El día tiene las mi
    - Tareas con Urgencia = Sin apuro y Do Date en la semana a planificar.
    - Vencidas (Due Date pasada y Done = false).
    - Arrastradas: Urgencia = Esta semana que no se hicieron la semana anterior (preguntar si siguen siendo urgentes).
-   - Tareas Next Up que ya parecen hechas (ej. una skill que ya existe en `.claude/skills/`).
+   - Tareas abiertas que ya parecen hechas (ej. una skill que ya existe en `.claude/skills/`).
    - Las de "Por decidir" (sin Do Date, sin proyecto, sin Status), cada una con su destino sugerido.
 8. **Pipelines**: Status = Waiting (con fecha de seguimiento); marcar las que no tienen seguimiento o llevan más de 30 días.
 9. **Comidas (plan contra lo comido)**: planilla "Plan y registro de comidas Juanma" (id `1mfIChB1alVFoRp2GkjKzOCv-Q1tEYxMVxdDSMwUVGgM`, locale es_UY). Revisar los últimos 7 días hasta ayer en las pestañas "Semana DD/MM" (pueden ser dos). Para cada día con algo en "Lo que comí", calcular las porciones con la pestaña Equivalencias (en crudo; 180 g de carne = 3 prote; legumbres 0,5 carbo + 0,5 prote) y escribirlas en la columna "Lo que comí" de ese día, filas 16 a 20 (carbo, prote, grasa, fruta, vegetales; meta en la columna P). En el briefing: días que cumplieron las 22 porciones, faltantes o excesos por grupo, platos planificados que no se cocinaron y platos con Estado "Probar" del Banco de comidas que se comieron, preguntando qué le parecieron. Si no cargó nada, decirlo en una línea.
