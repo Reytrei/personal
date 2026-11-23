@@ -16,7 +16,8 @@ Meta Q4 (Notion): enviar el libro a editoriales antes del 15/12, entre 1 y 3 env
     - `Dossiers/Reservoir Books/`: manuscrito en PDF (copia del de Minúscula).
     - `Dossiers/Galaxia Gutenberg/`: dosier con "Lo de Fabio" y `galaxia-gutenberg.json`.
     - `Dossiers/Fulgencio Pimentel/`: dosier con "La pecera" y `fulgencio-pimentel.json`.
-- **Notion**: proyecto "Contactar Editoriales" con sus tareas y la base "Seguimiento Editoriales" (26 editoriales). Es el único registro de seguimiento; el Excel se eliminó.
+- **Notion**: proyecto "Contactar Editoriales Españolas" con sus tareas y la base "Seguimiento Editoriales" (26 editoriales). Es el único registro de seguimiento; el Excel se eliminó.
+- **Próximos proyectos** (cuando se termine de enviar a las españolas): editoriales de Uruguay, y después uno para buscar premios y postular. Ribera del Duero no es prioridad: se lo dan a autores conocidos (lo admitió un editor); se puede mandar porque no se pierde nada.
 - **Gmail**: correo enviado a La Caja el 7/8/2026 (asunto "Manuscrito - Las cosas que flotan"). Sirve de plantilla de correo.
 
 ## Skill `contactar-editorial`
