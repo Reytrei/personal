@@ -15,6 +15,7 @@ Objetivo: que Juan Manuel llegue a su Weekly Review recordando qué hizo, con la
 - Weekly Goals: collection://3a78da52-9e8e-80ec-9194-000b92d60eca (relación con Weeks; Done; Señal).
 - Task DB: collection://020b9241-244e-42d2-9ce7-db5671397421 (Task, Done, Do Date, Due Date, Status, Projects, Urgencia, Tiempo). Urgencia: Esta semana, Normal, Sin apuro; vacío = Normal.
 - Projects: collection://9c4c5809-fcf0-4783-9e5a-71e03f4eb42b (activos: Status In Progress, Planning, Not started).
+- Pillars: collection://157630fd-483d-4178-82f7-92d964a03a3f (activos: Status Active). El pilar de una tarea sale de su proyecto (relación Pillars de Projects) o, si no tiene proyecto, de su propia relación Pillars. Reglas en `planificacion/CLAUDE.md`.
 - Seguimiento Editoriales: collection://3918da52-9e8e-8041-bcff-000bbd4d2381 (Editorial, Estado, Fecha de envío, Próxima acción). Es la fuente de los envíos a editoriales, no Task DB.
 - Quarters: páginas "AA - QN" (ej. "26 - Q4"); las metas del trimestre y sus indicadores semanales están en la página. Buscarla con la búsqueda de Notion.
 - Google Calendar: principal (juanm.trelles@gmail.com), "Rutina" (bloques de Trabajo; el horario cambia según el mes, leerlo del calendario y no asumirlo; ignorar en el resumen de eventos) y "Morcillas" (compartido).
@@ -60,6 +61,7 @@ Capacidad = horas por día disponibles para tareas propias. El día tiene las mi
    - Envíos a editoriales: contar las filas de Seguimiento Editoriales con Fecha de envío dentro de la semana que termina (nombrarlas). Si una tarea "Enviar dossier a X" está Done pero X no tiene envío registrado en la semana (descartada, se envió otro día o falta cargar la fecha), avisarlo. Si hay filas con Estado = Enviado sin Fecha de envío, avisarlo también.
    - Qué parte de lo hecho empujó proyectos activos o metas, y qué parte fue mantenimiento o urgencias.
    - Proyectos activos sin ninguna tarea abierta (sin próxima acción).
+   - **Pilares**: una línea por pilar activo con las tareas hechas en la semana (cantidad y minutos; un proyecto con varios pilares cuenta en todos). Marcar los pilares sin actividad y los proyectos activos sin pilar.
 5. **Capacidad de la semana a planificar**: tabla por día con presupuesto, lo que se resta, horas libres, planificables (×0.7), carga ya agendada y margen. Cerrar con el total planificable y avisar los días sobrecargados.
 6. **Candidatas para la semana** (el pool del que elige):
    - Tareas con Urgencia = Esta semana.

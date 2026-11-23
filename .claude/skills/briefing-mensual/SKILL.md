@@ -17,6 +17,7 @@ La Monthly es un control de rumbo sobre las metas del trimestre: este proceso pr
 - Win Today (señales diarias): collection://6d18da52-9e8e-828f-a39c-8793ee33189d (filas "Señal DD/MM", texto en Señal).
 - Task DB: collection://020b9241-244e-42d2-9ce7-db5671397421 (Urgencia: Esta semana, Normal, Sin apuro; vacío = Normal).
 - Projects: collection://9c4c5809-fcf0-4783-9e5a-71e03f4eb42b.
+- Pillars: collection://157630fd-483d-4178-82f7-92d964a03a3f (activos: Status Active; cada página empieza con su **Estándar**). El pilar de una tarea sale de su proyecto o, si no tiene, de su relación Pillars. Reglas en `planificacion/CLAUDE.md`.
 - Google Calendar: principal (juanm.trelles@gmail.com), "Rutina" (ignorar los bloques de Trabajo) y "Morcillas".
 
 ## Tareas recurrentes del mes en curso
@@ -45,11 +46,12 @@ La Monthly es un control de rumbo sobre las metas del trimestre: este proceso pr
 2. **Weekly Goals del mes**: cumplidos y no cumplidos, y cuáles se repitieron sin cumplirse.
 3. **Señales del mes**: resumen y 1 o 2 patrones candidatos que se repiten.
 4. **Tareas cerradas** por proyecto y "sin proyecto"; proyectos que avanzaron y proyectos activos sin movimiento.
+4b. **Recorrido por pilares**: tabla con cada pilar activo, su Estándar, la actividad del mes (tareas hechas y minutos; un proyecto con varios pilares cuenta en todos), los proyectos que lo movieron y un 🟢 / 🟡 / 🔴 sugerido contra el estándar, con la evidencia. Él decide el color. Destacar los pilares sin actividad en el mes y si eso parece decisión (mantenimiento) o abandono.
 5. **Hitos del calendario** del mes (viajes, eventos importantes).
 6. **Focus y Effectiveness** de cada semana del mes, y semanas sin registro.
 7. **Entrenamientos**: promedio por semana vs mínimo de 3, contando los eventos de entrenamiento del calendario con el mismo criterio que la skill `briefing-semanal`.
 8. **Tareas Sin apuro**: las tareas abiertas con Urgencia = Sin apuro, con su antigüedad, para que decida si suben de urgencia, siguen igual o se borran.
-9. **Preguntas para decidir**: sobre las metas en 🟡 o 🔴 (ajustar, bloque fijo, pausar o soltar).
+9. **Preguntas para decidir**: sobre las metas en 🟡 o 🔴 (ajustar, bloque fijo, pausar o soltar) y sobre los pilares en 🔴 (crear un proyecto o una tarea, o aceptarlo por ahora).
 
 ## Salida
 - Buscar la página del mes que terminó. Si no existe, no crearla: avisarlo en la primera línea y no insertar nada (las tareas recurrentes y las páginas de "Mes siguiente" se crean igual).

@@ -11,6 +11,7 @@ Todoist es la única bandeja de captura. Notion es el sistema. Este proceso muev
 - Zona horaria: America/Montevideo.
 - Task DB (data source): collection://020b9241-244e-42d2-9ce7-db5671397421
 - Projects (data source): collection://9c4c5809-fcf0-4783-9e5a-71e03f4eb42b (usar solo proyectos con Status In Progress, Planning o Not started; consultarlos en cada corrida)
+- Pillars (data source): collection://157630fd-483d-4178-82f7-92d964a03a3f (usar solo los de Status Active; reglas en `planificacion/CLAUDE.md`)
 - Win Today (señales diarias): collection://6d18da52-9e8e-828f-a39c-8793ee33189d (Daily Goal = título, Señal = texto, 🎢 Weeks = relación)
 - Weeks: collection://f914dcf1-83a8-418a-86b6-6a3637a43994 (páginas "Semana NN - AA", semana ISO)
 - Todoist "Lista de compras": projectId 6hr9fqPq7rQRwQrp.
@@ -29,6 +30,7 @@ Todoist es la única bandeja de captura. Notion es el sistema. Este proceso muev
    - **Task**: el texto de la tarea, limpio (sin la fecha ni la palabra "urgente" si estaban escritas en el texto).
    - **Tiempo**: siempre estimarlo.
    - **Projects**: solo si la relación con un proyecto activo es obvia. Ante la duda, sin proyecto.
+   - **Pillars**: solo si la tarea queda sin proyecto (con proyecto, el pilar se hereda). Asignar el pilar activo que corresponda; puede ser más de uno. Ante la duda, sin pilar y anotarlo como duda.
    - **Urgencia**:
      - Esta semana: si en Todoist tiene prioridad p1 (en la API, priority = 4) o el texto dice "urgente".
      - Sin apuro: si es una compra o un recado sin plazo, o el texto dice "sin apuro" o "cuando pueda".
@@ -46,7 +48,7 @@ Todoist es la única bandeja de captura. Notion es el sistema. Este proceso muev
    - Después de escribir, volver a leer Pendientes y completar en Todoist SOLO las tareas cuyo ID quedó cargado.
 
 ## Si Juan Manuel está presente (corrida manual)
-Antes de crear, mostrar una tabla con la propuesta (Tarea, Descripción, Do Date, Due Date, Proyecto, Urgencia, Tiempo), las señales detectadas con el día asignado y las compras con su comercio. Debajo, las dudas numeradas, una por tarea, con opciones cuando se pueda (ej. "¿'Llamar a Pedro' es por el presupuesto del baño o por el cumpleaños?"). Esperar su OK, correcciones y respuestas; con eso, crear.
+Antes de crear, mostrar una tabla con la propuesta (Tarea, Descripción, Do Date, Due Date, Proyecto, Pilar, Urgencia, Tiempo), las señales detectadas con el día asignado y las compras con su comercio. Debajo, las dudas numeradas, una por tarea, con opciones cuando se pueda (ej. "¿'Llamar a Pedro' es por el presupuesto del baño o por el cumpleaños?"). Esperar su OK, correcciones y respuestas; con eso, crear.
 
 ## Si corre sin supervisión (rutina matinal)
 Aplicar las reglas de arriba sin preguntar y devolver la lista de lo importado (tareas, señales y compras) con lo que se asignó, marcando las que quedaron con `Descripción pendiente`, para que lo revise en el brief. Si un paso falla, anotarlo y seguir con el resto.
