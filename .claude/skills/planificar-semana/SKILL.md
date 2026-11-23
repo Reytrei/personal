@@ -27,11 +27,12 @@ Se usa durante la Weekly Review, después de que Juan Manuel fijó sus Weekly Go
 - Si una tarea marcada "Esta semana" no se hizo la semana anterior, preguntar si sigue siendo urgente.
 
 ## Capacidad
-- Usar el Planificable (min) de la base Capacidad. Recalcularlo si cambió algo: 360 min de lunes a viernes dentro de la franja de 8:00 a 20:00, 0 fines de semana (si un día hábil no tiene bloque de Trabajo por viaje, feriado o vacaciones, preguntar su capacidad); restar eventos antes de las 20:00 (los que empiezan a las 20:00 o después son sociales y no cuentan); Práctica Fútbol cuenta desde las 18:30; ×0.7.
+- Calcular siempre el Planificable con estas reglas; la base Capacidad es solo referencia (la rutina vieja de claude.ai la pisa con 240 min). Reglas: 360 min de lunes a viernes dentro de la franja de 8:00 a 20:00, 0 fines de semana (si un día hábil no tiene bloque de Trabajo por viaje, feriado o vacaciones, preguntar su capacidad); restar eventos antes de las 20:00 (los que empiezan a las 20:00 o después son sociales y no cuentan); Práctica Fútbol cuenta desde las 18:30; ×0.7.
 - Si Juan Manuel cancela entrenamientos o eventos (lesión, cambio de planes), ese tiempo vuelve a estar disponible.
 - Entrenamientos o turnos sin día confirmado (ej. un GYM extra, fisioterapia): reservar su tiempo en el total de la semana y dejar margen en los días, sin asignarlos a uno.
 - Si él dice que un día tiene la noche libre y quiere avanzar, se puede cargar más ese día.
 - Tareas con su propio evento en el calendario (GYM, Weekly Review) no suman a la carga.
+- Si "Planificar comidas" cae en la semana y todavía no se corrió, contar los 30 min de "Comprar verdulería" del miércoles: esa skill crea la tarea con Do Date.
 
 ## Pasos
 1. **Leer contexto**: Weekly Goals recién fijados; briefing semanal; metas e indicadores del Q; capacidad de la semana; calendario de la semana.
