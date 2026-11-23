@@ -25,7 +25,8 @@ Juanma (Juan Manuel) deja los extractos de sus bancos y de los de Mili en carpet
 
 Formatos que se aceptan:
 - **Revolut, PDF original (Mac: `~/Finanzas/Revolut/Personal` o `Conjunta`)**: el PDF tal como lo baja la app, con una sección por divisa. La app lo genera en dos variantes según el idioma ("Estado de cuenta en EUR" con `€1,048.48`, o "Extracto en EUR" con `1.048,48€`, que además cambia algunos textos, como "Tarifa del plan Metal" en vez de "Comisión del plan Metal"): el script lee las dos. Toma el signo de las columnas Dinero saliente / Dinero entrante, usa la **Fecha valor** y controla que cada saldo cierre con el anterior. Los movimientos del bloque "Pendientes" se cargan como pendientes (ver "Movimientos pendientes"), con la fecha de la transacción. La descripción es la línea principal (y su continuación si se corta, como "Transferencia a JUAN MANUEL TRELLES & MILAGROS CANAL"), sin el detalle en letra chica. El saldo del banco es el "Saldo final" del resumen más los pendientes que quedan cargados (el banco no los descuenta del saldo final, la hoja sí). Si el título dice "compartida" o "conjunta" y el PDF está en Personal (o al revés), no se importa y se avisa. Puede haber varios PDF por carpeta (por ejemplo, uno por mes): la deduplicación lo resuelve, y los que repiten un movimiento con otro texto salen como posibles duplicados.
-- **Santander, PDF original (Mac: `~/Finanzas/Santander`)**: el `umsatz.pdf` que baja la web, una cuenta por archivo. La cuenta sale del número del encabezado sin ceros adelante (001200417441 → "Santander UYU", 5200549831 → "Santander USD"). La descripción junta las columnas Tipo Movimiento y Descripción (el PDF corta palabras al final de la línea, como "DLO*PE" + "DIDOSYA": el script las vuelve a pegar). Los "DEBITO A CONFIRMAR" se cargan como pendientes (ver "Movimientos pendientes"), con la descripción limpia ("COMPRA MONTEVIDEO/DLO*PEDIDOSYA PROPINA"). El saldo del banco es el del movimiento más nuevo, que ya incluye los pendientes. Como el PDF escribe las descripciones distinto que la Hoja de Drive, un movimiento con el mismo monto y cuenta que uno ya cargado (±3 días) pero con otra descripción sale como posible duplicado. Ojo: este formato se probó solo con movimientos pendientes; en la primera importación con movimientos confirmados, revisá que la descripción y los montos salgan bien antes de cargar. El PDF trae solo el período elegido en la web (por ejemplo, el mes): si la última importación de Santander quedó antes del inicio de ese período, faltan movimientos y el saldo no va a cerrar; pedile a Juanma el extracto que cubra el hueco.
+- **Santander, CSV original (Mac: `~/Finanzas/Santander`; el formato preferido)**: el `umsatz.csv` que baja la web, una cuenta por archivo, en Latin-1 (el script lo detecta solo). Es la misma tabla que la Hoja de Drive (ver "Santander desde Drive"): cada movimiento trae la descripción entera en una celda, así que sale igual que lo ya cargado y no aparecen falsos duplicados. El número de cuenta viene con ceros adelante (001200417441) y el script los saca. La fila "Desde: … Hasta: …" da el período, que sirve para borrar pendientes anulados.
+- **Santander, PDF original (Mac: `~/Finanzas/Santander`; alternativa al CSV)**: el `umsatz.pdf` que baja la web, una cuenta por archivo. La cuenta sale del número del encabezado sin ceros adelante (001200417441 → "Santander UYU", 5200549831 → "Santander USD"). La descripción junta las columnas Tipo Movimiento y Descripción (el PDF corta palabras al final de la línea, como "DLO*PE" + "DIDOSYA": el script las vuelve a pegar). Los "DEBITO A CONFIRMAR" se cargan como pendientes (ver "Movimientos pendientes"), con la descripción limpia ("COMPRA MONTEVIDEO/DLO*PEDIDOSYA PROPINA"). El saldo del banco es el del movimiento más nuevo, que ya incluye los pendientes. Como el PDF escribe las descripciones distinto que la Hoja de Drive, un movimiento con el mismo monto y cuenta que uno ya cargado (±3 días) pero con otra descripción sale como posible duplicado. Ojo: en los movimientos confirmados el PDF a veces pega palabras que no estaban cortadas ("RUDYB", "SALADEL", "DUTYFREE"; 23/11/2026), y entonces salen como posibles duplicados de lo ya cargado: si la referencia es la misma y el saldo cierra sin ellos, no se cargan. Por eso es mejor el CSV. El PDF trae solo el período elegido en la web (por ejemplo, el mes): si la última importación de Santander quedó antes del inicio de ese período, faltan movimientos y el saldo no va a cerrar; pedile a Juanma el extracto que cubra el hueco.
 - **Revolut, extracto PDF desde Drive (respaldo)**: un solo PDF por subcarpeta ("Revolut personal" o "Revolut conjunta") con una sección por divisa (EUR, USD, GBP, MAD, AUD, CLP…). No lo bajes con `download_file_content` (el base64 se trunca): leelo con Google Drive `read_file_content` y guardá el `fileContent` tal cual como `.txt` (alcanza con las secciones que tienen transacciones, los "Resumen del saldo" y los pies de página "Estado de cuenta … en XXX Generado el"). El script toma la divisa del pie de cada página, usa la **Fecha valor** (la segunda fecha) como fecha del movimiento, salta el bloque "Pendientes" (desde Drive no se cargan pendientes) y saca el signo de la diferencia de saldo (el PDF no separa salientes de entrantes). El saldo del banco es el "Saldo final" del resumen. Las divisas sin cuenta en `REVOLUT_CUENTAS` (GBP, MAD, AUD, CLP) se avisan y no se importan.
 - **Revolut, extracto por cuenta (.csv)**: formato anterior. El archivo no dice de qué cuenta es, por eso va en la subcarpeta "Revolut personal" o "Revolut conjunta". La moneda sale del archivo (personal EUR → "Revolut EUR", personal USD → "Revolut USD", conjunta EUR → "Revolut conjunta"). Solo se importan los movimientos COMPLETADOS; los PENDIENTES entran en una importación posterior.
 - **Revolut, extracto consolidado (.xlsx)**: formato anterior, sigue funcionando desde cualquier carpeta.
@@ -48,7 +49,7 @@ Los pendientes de Revolut (bloque "Pendientes") y de Santander ("DEBITO A CONFIR
 
 1. **Listar archivos en la Mac (fuente principal).** Con las herramientas de la Mac (`device_list_dir`; si no está conectada `~/Finanzas`, pedila con `device_request_folder_access`), listá `~/Finanzas/Itau`, `~/Finanzas/Revolut/Personal`, `~/Finanzas/Revolut/Conjunta` y `~/Finanzas/Santander`, sin entrar a `Procesados` (ignorá `.DS_Store`).
    - Itaú: tomá los `itau_juanma_*.csv` e `itau_mili_*.csv` (no los `_crudo.json`). Si falta el de alguno de los dos, o el más nuevo es de antes de hoy, preguntale a Juanma si quiere correr el script antes de seguir. Si la última importación de una cuenta Itaú es de hace más de 7 días, recordale usar `--desde` con esa fecha para no dejar huecos.
-   - Revolut y Santander: tomá los `.pdf`.
+   - Revolut: tomá los `.pdf`. Santander: tomá los `.csv` (preferidos) y los `.pdf`.
    - Si la Mac no responde o se rechaza el acceso a la carpeta, usá el respaldo de Drive (paso 1b) y avisalo al final (Juanma puede agregar la carpeta con "+" → "Agregar carpeta" en la app).
 1b. **Respaldo en Drive.** Con Google Drive `search_files`, buscá `parentId = '<id>'` en la carpeta Importar, en las dos subcarpetas de Revolut y en las subcarpetas Itau Mili, Itau Juanma y Santander Mili (excluí carpetas con `mimeType != 'application/vnd.google-apps.folder'`). Revisalo siempre, aunque la Mac ande: si Juanma dejó algo ahí, se importa igual (si un movimiento viene de los dos lados, la deduplicación lo resuelve). Si no hay archivos en ningún lado, seguí igual: puede haber correos de Splitwise (paso 2b).
 2. **Traer los archivos.** Los de la Mac traelos con `device_stage_files` y copialos a una carpeta nueva y vacía (por ejemplo `entrada/`), sin cambiarles la extensión. Los de Drive: para cada archivo, `download_file_content` (devuelve base64); para las Hojas de Google de Itau Mili, Itau Juanma y Santander Mili, con `exportMimeType: "text/csv"`; para los PDF de Revolut, `read_file_content` guardado como `.txt`. Decodificalo y guardalo en `entrada/`, conservando la extensión original (las Hojas como `.csv`; el texto de los PDF de Revolut como `.txt`). Armá `manifiesto.json`: `[{"path": "entrada/x.pdf", "carpeta": "...", "nombre": "<nombre del archivo o título en Drive>", "exportado": "AAAA-MM-DD"}]`. Si dos archivos tienen el mismo nombre, renombralos en `entrada/` (el nombre real va en `"nombre"`). Valores de `"carpeta"`:
@@ -636,17 +637,27 @@ def leer_santander_pdf(path, avisos):
     return out, ({cuenta: saldo_banco} if saldo_banco is not None else {}), pend, ({cuenta: [periodo]} if periodo else {})
 
 
-# ---------- Santander (Hoja de Google exportada a CSV, subcarpeta "Santander Mili") ----------
+# ---------- Santander CSV: el que baja la web (Mac, Latin-1) o la Hoja de Google exportada (Drive, UTF-8) ----------
 def leer_santander_csv(path, avisos):
-    rows = list(csv.reader(io.StringIO(open(path, 'rb').read().decode('utf-8-sig'))))
-    nro = mon = None; hdr = None; out = []; saldo_banco = None; pend = 0
+    raw = open(path, 'rb').read()
+    try:
+        texto = raw.decode('utf-8-sig')
+    except UnicodeDecodeError:
+        texto = raw.decode('latin-1')  # el CSV original de la web de Santander
+    rows = list(csv.reader(io.StringIO(texto)))
+    nro = mon = None; hdr = None; out = []; saldo_banco = None; pend = 0; periodo = None
     for r in rows:
         if not r:
             continue
         if r[0] == 'Número':
-            nro = r[1].strip()
+            nro = r[1].strip().lstrip('0')  # la web escribe 001200417441; la Hoja de Google, 1200417441
         elif r[0] == 'Moneda':
             mon = r[1].strip()
+        elif r[0] == 'Desde:' and len(r) > 3:
+            try:
+                periodo = tuple(datetime.date(*map(int, x.strip().split('/')[::-1])).isoformat() for x in (r[1], r[3]))
+            except ValueError:
+                pass
         elif r[0] == 'Fecha' and 'Concepto' in r:
             hdr = {k: r.index(k) for k in ('Fecha', 'Referencia', 'Concepto', 'Débito', 'Crédito', 'Saldos')}
         elif hdr and re.match(r'^\d{2}/\d{2}/\d{4}$', r[0].strip()):
@@ -672,7 +683,7 @@ def leer_santander_csv(path, avisos):
         return [], {}, 0, {}
     for m in out:
         m['cuenta'] = cuenta
-    return out, ({cuenta: saldo_banco} if saldo_banco is not None else {}), pend, {}
+    return out, ({cuenta: saldo_banco} if saldo_banco is not None else {}), pend, ({cuenta: [periodo]} if periodo else {})
 
 
 # ---------- Clasificación ----------
