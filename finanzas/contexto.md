@@ -129,7 +129,8 @@ El estado "Pendiente" es solo para deudas con terceros, nunca entre Juanma, Mili
 ## Categorías
 
 - Ámbito conjunto por defecto: Alquiler y gastos comunes, Servicios, Super, Casa, Vacaciones juntos.
-- Ámbito personal por defecto: Salud, Deporte, Libros y cultura, Salidas, Ropa, Transporte, Escapadas, Regalos, Cuidado personal, Universidad, Infraestructura, Otros, Costo empresa.
+- Ámbito personal por defecto: Salud, Deporte, Libros y cultura, Salidas, Ropa, Transporte, Regalos, Cuidado personal, Universidad, Infraestructura, Viajes, Otros, Costo empresa.
+- Viajes (desde el 23/11/2026) es para los viajes y escapadas de Juanma sin Mili; los viajes con Mili van en Vacaciones juntos.
 
 El ámbito es solo el valor por defecto: cualquier categoría puede tener gastos personales y conjuntos. Servicios incluye suscripciones, telefonía, luz, agua, internet y limpieza. Costo empresa incluye BPS, Fonasa, facturación electrónica, contador de las unipersonales y comisiones por cobrar el sueldo.
 
@@ -137,7 +138,7 @@ El ámbito es solo el valor por defecto: cualquier categoría puede tener gastos
 
 - Gastos fijos (en UYU, convertidos a USD) más presupuesto variable por categoría, separado en Juanma y conjunto. Los gastos fijos están en `Presupuesto!A14:F25`; la columna F (Titular) se usa solo para Costo empresa.
 - **Costo empresa** (fila 45): cada gasto fijo cuenta solo para su titular (Juanma o Mili), no proporcional. Se resta del ingreso antes de aplicar los porcentajes, por eso no cuenta contra el 20% personal en el Resumen (`Presupuesto!C8 = F46 − F45`, `C10 = P46 − P45`).
-- Presupuesto personal de Juanma desde oct. 2026: 1.399 (20% de 6.995). Variable base: Servicios 100, Salud 55, Deporte 55, Libros y cultura 100, Salidas 235, Ropa 100, Transporte 70, Escapadas 115, Regalos 70, Cuidado personal 45, Infraestructura 45, Otros 70. Desde 2027 se escala cada trimestre con el factor `Config!B48`.
+- Presupuesto personal de Juanma desde oct. 2026: 1.399 (20% de 6.995). Variable base desde el 23/11/2026 (suma 1.060): Servicios 95, Salud 50, Deporte 50, Libros y cultura 95, Salidas 345, Ropa 95, Transporte 65, Regalos 65, Cuidado personal 40, Infraestructura 40, Viajes 55, Otros 65. Viajes se armó sacando 5 a cada categoría; el reparto se revisa en la Monthly de diciembre. Desde 2027 se escala cada trimestre con el factor `Config!B48`.
 - El panel muestra el presupuesto en bloques por De quién (Juanma, Mili, Conjunto). Cada categoría se mide contra el presupuesto de su propio bloque; en rojo, lo que se pasó o tiene gasto sin presupuesto.
 
 ## Deudas
@@ -160,7 +161,7 @@ El ámbito es solo el valor por defecto: cualquier categoría puede tener gastos
 
 ## Pendientes conocidos
 
-- Las cuentas Santander de Mili todavía no se importan.
+- Mili no clasifica sus gastos por ahora: sus movimientos personales (Santander, Itaú USD Mili y los suyos desde la conjunta) quedan sin clasificar y se ignoran al revisar.
 - Revolut USD no se usa por ahora.
 - El aporte de 540 EUR de Juanma a Revolut conjunta (02/10) se devolvió; entra con el próximo export de Revolut. Al clasificar la devolución como "Aporte a conjunta" se compensa en Deudas.
 - Las referencias de las operaciones "DEB. CAMBIOS" de Itaú no vienen en el extracto exportado; hay que cargarlas a mano en Notas.
