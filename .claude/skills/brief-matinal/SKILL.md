@@ -28,7 +28,6 @@ El brief completo es el último mensaje. No enviar correos.
 - Capacidad: collection://31eb5037-cb83-4e8a-ba74-bd519ec05a71 (Día, Fecha, Presupuesto (min), Restado (min), Libres (min), Planificable (min), Detalle). Una fila por fecha.
 - Weeks: collection://f914dcf1-83a8-418a-86b6-6a3637a43994 (página "Semana NN - AA" de la semana actual).
 - Weekly Goals: collection://3a78da52-9e8e-80ec-9194-000b92d60eca (relación con Weeks; Done, Señal).
-- Win Today (señales diarias): collection://6d18da52-9e8e-828f-a39c-8793ee33189d (filas "Señal DD/MM").
 - Correo: Gmail y Outlook personal (juanma_trelles@hotmail.com) vía el conector Microsoft 365, solo lectura: buscar con `outlook_email_search` (cargarlo con ToolSearch "outlook" si está diferido). No mover, marcar ni borrar correos.
 
 ## Reglas de capacidad
@@ -49,12 +48,11 @@ El brief completo es el último mensaje. No enviar correos.
 7. **Weekly Goals**: los de la semana actual, con su estado.
 8. **Correo**: hilos de las últimas 24 h en la bandeja principal de Gmail y en la bandeja de entrada de Outlook que pidan acción o respuesta (personas reales, trámites, bancos, facturas, plazos). Ignorar promociones, newsletters, notificaciones automáticas y los correos "Morning brief" de días anteriores (de cuando el brief se mandaba por correo). Máximo 5 entre las dos cuentas, una línea cada uno con qué pide; marcar con "(Outlook)" los que vienen de ahí. Ignorar también los avisos de seguridad de cuenta de Microsoft.
 9. **Importado de Todoist**: si en esta corrida se importaron tareas, señales o compras, listarlas con lo que se asignó. Para compras, una línea con la cantidad agregada a Pendientes y los productos.
-10. **Señal pendiente**: si en Win Today no existe la fila "Señal DD/MM" del día hábil anterior (los lunes, la del viernes), terminar con: "¿Cuál fue la señal de [día]? Anotala en Todoist como 'señal: ...' y mañana la cargo."
-11. **Cierre**: una pregunta corta para elegir 1 a 3 wins del día, sugiriendo candidatos alineados con los Weekly Goals.
+10. **Cierre**: una pregunta corta para elegir 1 a 3 wins del día, sugiriendo candidatos alineados con los Weekly Goals.
 
 ## Formato
 - Español, breve, escaneable desde el celular.
-- Orden: resumen de una línea (carga del día vs planificable) → calendario → tareas → alertas (vencidas, seguimientos, plazos) → correo → importados → señal pendiente → wins.
+- Orden: resumen de una línea (carga del día vs planificable) → calendario → tareas → alertas (vencidas, seguimientos, plazos) → correo → importados → wins.
 - Omitir secciones vacías.
 - No usar el separador '---'.
 - El brief completo debe ser el último mensaje.

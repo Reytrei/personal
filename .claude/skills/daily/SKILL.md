@@ -29,7 +29,7 @@ En la misma pregunta, sumar las tareas abiertas de Task DB cuyo contenido empiez
 En la misma pregunta, los pendientes de ayer (paso 0): una tabla con Task, Tiempo, Due Date, la Falta 1 de su `## Estado` y una sugerencia (hoy, el próximo día hábil con Planificable libre según la base Capacidad, o sin fecha). Juanma elige para cada una; con la respuesta, cambiar su Do Date en Notion (nunca la Due Date). Si no hay pendientes, no preguntar por esto.
 
 ## Paso 2: datos del brief
-Seguir los pasos 1 a 10 de la skill `brief-matinal` (capacidad de hoy y 6 días con actualización de la base Capacidad, calendario, tareas de hoy, vencidas, seguimientos, fechas límite, Weekly Goals, correo, señal pendiente) con sus reglas de capacidad. No escribir el brief como mensaje: los datos van al archivo del paso 3.
+Seguir los pasos 1 a 9 de la skill `brief-matinal` (capacidad de hoy y 6 días con actualización de la base Capacidad, calendario, tareas de hoy, vencidas, seguimientos, fechas límite, Weekly Goals, correo) con sus reglas de capacidad. No escribir el brief como mensaje: los datos van al archivo del paso 3.
 
 Además:
 - **Esta semana sin fecha**: tareas abiertas con Urgencia = Esta semana y sin Do Date.
@@ -70,7 +70,6 @@ Formato (los títulos de sección van en inglés porque el board los usa como cl
 - Importado de Todoist: …
 - Conectores o pasos que fallaron, si hubo (una línea cada uno).
 - Si la carga supera lo planificable: qué mover (primero lo que no tiene Urgencia = Esta semana ni Due Date cercana). Solo sugerir, no mover.
-- Señal pendiente: ¿cuál fue la señal de <día>? Anotala en Todoist como "señal: …".
 - Wins de hoy: elegí 1 a 3. Candidatos: …
 
 ## Done (unplanned)
