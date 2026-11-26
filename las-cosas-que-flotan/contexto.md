@@ -27,6 +27,7 @@ Decisiones:
 - Firma del correo: solo email.
 - Adjunto: el dosier (ya trae el relato). Si las bases piden el manuscrito, también el manuscrito. Se adjuntan a mano en el borrador.
 - Notion: queda "No enviado" con próxima acción hasta confirmar el envío.
+- 26/11: "Enviado" en Seguimiento Editoriales es solo para el envío del libro (dosier o manuscrito). Una consulta previa ("¿aceptan envíos?") deja la ficha en "No enviado", con la consulta en notas y la próxima acción en esperar respuesta.
 - Correo base corregido: "uruguayo" en minúscula, bio con puntuación y mención a Selecta.
 - 15/11: el PDF se genera en la Mac, corriendo `generar.py` desde `Plantilla dosier/` (jinja2 y Playwright instalados); queda en `Dossiers/<Editorial>/`.
 - Nada de una editorial se guarda en la plantilla.
